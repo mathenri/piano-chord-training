@@ -3,6 +3,7 @@ import './App.css';
 import { CHORDS } from './chords.js'
 import { KEYS } from './pianoKeys.js'
 import { NO_ANSWER, CORRECT, INCORRECT } from './constants.js'
+import { getRandomElement } from './utils.js'
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends Component {
 
     this.state = {
       selectedKeys: [],
-      askedChord: CHORDS[Math.floor(Math.random() * CHORDS.length)],
+      askedChord: getRandomElement(CHORDS),
       lastChordCorrect: NO_ANSWER
     }
 
@@ -19,6 +20,7 @@ class App extends Component {
     this.toggleKey = this.toggleKey.bind(this)
   }
 
+  // validates if the chord entered by the user is correct
   validateChord() {
     const correct = this.state.askedChord.notes.join() === this.state.selectedKeys.join() ? CORRECT : INCORRECT
     this.setState({
@@ -27,7 +29,7 @@ class App extends Component {
   }
 
   nextChord() {
-    const nextChord = CHORDS[Math.floor(Math.random() * CHORDS.length)]
+    const nextChord = getRandomElement(CHORDS)
     this.setState({
       askedChord: nextChord,
       lastChordCorrect: NO_ANSWER,
