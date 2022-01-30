@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/piano-chord-training/static/css/main.d27fd322.css",
+    "main.js": "/piano-chord-training/static/js/main.1ae21a8a.js",
+    "index.html": "/piano-chord-training/index.html",
+    "main.d27fd322.css.map": "/piano-chord-training/static/css/main.d27fd322.css.map",
+    "main.1ae21a8a.js.map": "/piano-chord-training/static/js/main.1ae21a8a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d27fd322.css",
+    "static/js/main.1ae21a8a.js"
+  ]
+}
