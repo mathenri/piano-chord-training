@@ -3,7 +3,7 @@ import './App.css';
 import { CHORDS } from './chords.js'
 import { KEYS } from './pianoKeys.js'
 import { NO_ANSWER, CORRECT, INCORRECT } from './constants.js'
-import { getRandomElement } from './utils.js'
+import { getRandomElement, removeElement } from './utils.js'
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +28,7 @@ class App extends Component {
     })
   }
 
+  // fetches a new random chord and presents it to the user
   nextChord() {
     const nextChord = getRandomElement(CHORDS)
     this.setState({
@@ -38,15 +39,13 @@ class App extends Component {
 
   }
 
+  // toggles if a piano key is selected or not
   toggleKey(keyId) {
     let { selectedKeys } = this.state
     if (!selectedKeys.includes(keyId)) {
       selectedKeys.push(keyId)
     } else {
-      const index = selectedKeys.indexOf(keyId);
-      if (index > -1) {
-        selectedKeys.splice(index, 1);
-      }
+      selectedKeys = removeElement(selectedKeys, keyId)
     }
     this.setState({selectedKeys})
   }
