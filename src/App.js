@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { CHORDS } from './chords.js'
 import { KEYS } from './pianoKeys.js'
+import { NO_ANSWER, CORRECT, INCORRECT } from './constants.js'
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends Component {
     this.state = {
       selectedKeys: [],
       askedChord: CHORDS[Math.floor(Math.random() * CHORDS.length)],
-      lastChordCorrect: "no_answer"
+      lastChordCorrect: NO_ANSWER
     }
 
     this.validateChord = this.validateChord.bind(this)
@@ -19,10 +20,7 @@ class App extends Component {
   }
 
   validateChord() {
-    console.log("Asked chord: ", this.state.askedChord.name)
-    console.log("Selected keys: ", this.state.selectedKeys.join())
-    console.log("Correct keys: ", this.state.askedChord.notes.join())
-    const correct = this.state.askedChord.notes.join() === this.state.selectedKeys.join() ? "correct" : "incorrect"
+    const correct = this.state.askedChord.notes.join() === this.state.selectedKeys.join() ? CORRECT : INCORRECT
     this.setState({
       lastChordCorrect: correct
     })
@@ -32,7 +30,7 @@ class App extends Component {
     const nextChord = CHORDS[Math.floor(Math.random() * CHORDS.length)]
     this.setState({
       askedChord: nextChord,
-      lastChordCorrect: "no_answer",
+      lastChordCorrect: NO_ANSWER,
       selectedKeys: []
     })
 
@@ -72,11 +70,11 @@ class App extends Component {
           })}
         </div>
 
-        { this.state.lastChordCorrect !== "correct" && <button onClick={this.validateChord}>Validate</button>}
+        { this.state.lastChordCorrect !== CORRECT && <button onClick={this.validateChord}>Validate</button>}
 
-        { this.state.lastChordCorrect !== "no_answer" && <p id="answer">{this.state.lastChordCorrect}</p>}
+        { this.state.lastChordCorrect !== NO_ANSWER && <p id="answer">{this.state.lastChordCorrect}</p>}
 
-        { this.state.lastChordCorrect === "correct" && <button onClick={this.nextChord}>Next chord!</button>}
+        { this.state.lastChordCorrect === CORRECT && <button onClick={this.nextChord}>Next chord!</button>}
       </div>
     );
   }
