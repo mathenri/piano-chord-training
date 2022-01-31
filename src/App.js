@@ -3,7 +3,7 @@ import './App.css';
 import { CHORDS } from './chords.js'
 import { KEYS } from './pianoKeys.js'
 import { NO_ANSWER, CORRECT, INCORRECT } from './constants.js'
-import { getRandomElement, removeElement } from './utils.js'
+import { getRandomElement, removeElement, sortByNoteOrder } from './utils.js'
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +22,9 @@ class App extends Component {
 
   // validates if the chord entered by the user is correct
   validateChord() {
-    const correct = this.state.askedChord.notes.join() === this.state.selectedKeys.join() ? CORRECT : INCORRECT
+    let { selectedKeys } = this.state
+    sortByNoteOrder(selectedKeys, KEYS.map(k => k.id))
+    const correct = this.state.askedChord.notes.join() === selectedKeys.join() ? CORRECT : INCORRECT
     this.setState({
       lastChordCorrect: correct
     })
@@ -45,7 +47,7 @@ class App extends Component {
     if (!selectedKeys.includes(keyId)) {
       selectedKeys.push(keyId)
     } else {
-      selectedKeys = removeElement(selectedKeys, keyId)
+      removeElement(selectedKeys, keyId)
     }
     this.setState({selectedKeys})
   }
