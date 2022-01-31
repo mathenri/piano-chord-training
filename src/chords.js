@@ -190,15 +190,6 @@ export const CHORDS = [
   { name: "Bmaj7/A#",  notes: ["A#1", "D#2", "F#2"]},
 
   //--- m7b5 ---
-  { name: "Am7b5/C",   notes: ["C1", "D#1", "G1"] },
-  { name: "Am7b5/Eb",  notes: ["D#1", "G1", "C2"]},
-  { name: "Am7b5/G",   notes: ["G1", "C2", "D#2"]},
-  { name: "Bbm7b5/Db", notes: ["C#1", "E1", "G#1"]},
-  { name: "Bbm7b5/Fb", notes: ["E1", "G#1", "C#2"]},
-  { name: "Bbm7b5/Ab", notes: ["G#1", "C#2", "E2"]},
-  { name: "Bm7b5/D",   notes: ["D1", "F1", "A1"]},
-  { name: "Bm7b5/F",   notes: ["F1", "A1", "D2"]}, 
-  { name: "Bm7b5/A",   notes: ["A1", "D2", "F2"]},
   { name: "Cm7b5/Eb",  notes: ["D#1", "F#1", "A#1"]},
   { name: "Cm7b5/Gb",  notes: ["F#1", "A#1", "D#2"]},
   { name: "Cm7b5/Bb",  notes: ["A#1", "D#2", "F#2"]},
@@ -226,11 +217,22 @@ export const CHORDS = [
   { name: "G#m7b5/B",  notes: ["B1", "D2", "F#2"]},
   { name: "G#m7b5/D",  notes: ["D1", "F#1", "B1"]},
   { name: "G#m7b5/F#", notes: ["F#1", "B1", "D2"]},
+  { name: "Am7b5/C",   notes: ["C1", "D#1", "G1"] },
+  { name: "Am7b5/Eb",  notes: ["D#1", "G1", "C2"]},
+  { name: "Am7b5/G",   notes: ["G1", "C2", "D#2"]},
+  { name: "Bbm7b5/Db", notes: ["C#1", "E1", "G#1"]},
+  { name: "Bbm7b5/Fb", notes: ["E1", "G#1", "C#2"]},
+  { name: "Bbm7b5/Ab", notes: ["G#1", "C#2", "E2"]},
+  { name: "Bm7b5/D",   notes: ["D1", "F1", "A1"]},
+  { name: "Bm7b5/F",   notes: ["F1", "A1", "D2"]}, 
+  { name: "Bm7b5/A",   notes: ["A1", "D2", "F2"]},
+  
 
   //--- m6 ---
   { name: "Cm6/Eb",     notes: ["D#1", "G1", "A1"] },
   { name: "Cm6/G",     notes: ["G1", "A1", "D#2"] },
   { name: "Cm6/A",     notes: ["A1", "D#2", "G2"] },
+  { name: "C#m6/A",     notes: ["A1", "D#2", "G2"] },
 
   //--- 7#5 ---
 
