@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { CHORDS } from './chords.js'
+import { CHORDS, CHORD_FAMILIES } from './chords.js'
 import { KEYS } from './pianoKeys.js'
 import { NO_ANSWER, CORRECT, INCORRECT } from './constants.js'
 import { getRandomElement, removeElement, sortByNoteOrder } from './utils.js'
@@ -12,12 +12,26 @@ class App extends Component {
     this.state = {
       selectedKeys: [],
       askedChord: getRandomElement(CHORDS),
-      lastChordCorrect: NO_ANSWER
+      lastChordCorrect: NO_ANSWER,
+      selectedChordFamilies: new Set(CHORD_FAMILIES)
     }
 
     this.validateChord = this.validateChord.bind(this)
     this.nextChord = this.nextChord.bind(this)
     this.toggleKey = this.toggleKey.bind(this)
+    this.handleChordFamilyCheckboxChanged = this.handleChordFamilyCheckboxChanged.bind(this)
+
+  }
+
+  handleChordFamilyCheckboxChanged(e) {
+    const chordFamily = e.target.name
+    const { selectedChordFamilies } = this.state
+    if (selectedChordFamilies.has(chordFamily)) {
+      selectedChordFamilies.delete(chordFamily);
+    } else {
+      selectedChordFamilies.add(chordFamily);
+    }
+    this.setState({ selectedChordFamilies })
   }
 
   // validates if the chord entered by the user is correct
@@ -32,7 +46,8 @@ class App extends Component {
 
   // fetches a new random chord and presents it to the user
   nextChord() {
-    const nextChord = getRandomElement(CHORDS)
+    const chordsSubset = CHORDS.filter(chord => this.state.selectedChordFamilies.has(chord.family))
+    const nextChord = getRandomElement(chordsSubset)
     this.setState({
       askedChord: nextChord,
       lastChordCorrect: NO_ANSWER,
@@ -78,6 +93,21 @@ class App extends Component {
         { this.state.lastChordCorrect !== NO_ANSWER && <p id="answer">{this.state.lastChordCorrect}</p>}
 
         { this.state.lastChordCorrect === CORRECT && <button onClick={this.nextChord}>Next chord!</button>}
+
+        {CHORD_FAMILIES.map(chordFamily => (
+        <div>
+          <label>
+            <input 
+              name={chordFamily} 
+              type="checkbox"
+              key={chordFamily}
+              onChange={this.handleChordFamilyCheckboxChanged}
+              checked={this.state.selectedChordFamilies.has(chordFamily)}
+            />
+            {chordFamily}
+          </label>
+        </div>
+        ))}
       </div>
     );
   }

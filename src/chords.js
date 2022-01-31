@@ -6,6 +6,16 @@ export const MAJOR_SEVENTH = "major_seventh"
 export const MINOR_SEVENTH_FLAT_FIVE = "minor_seventh_flat_five"
 export const MINOR_SIXTH = "minor_sixth"
 
+export const CHORD_FAMILIES = [
+ MAJOR,
+ MINOR,
+ DOMINANT_SEVENTH,
+ MINOR_SEVENTH,
+ MAJOR_SEVENTH,
+ MINOR_SEVENTH_FLAT_FIVE,
+ MINOR_SIXTH,
+]
+
 export const CHORDS = [
   //--- major ---
   { name: "C",     notes: ["C1", "E1", "G1"],    family: MAJOR},
@@ -244,8 +254,8 @@ export const CHORDS = [
   { name: "C#m6/G#",   notes: ["G#1", "A#1", "E2"], family: MINOR_SIXTH },
   { name: "C#m6/A#",   notes: ["A#1", "E2", "G#2"], family: MINOR_SIXTH },
   { name: "Dm6/F",     notes: ["F1", "A1", "B1"],   family: MINOR_SIXTH },
-  { name: "Dm6/A",     notes: ["A1", "B1", "F1"],   family: MINOR_SIXTH },
-  { name: "Dm6/B",     notes: ["B1", "F1", "A1"],   family: MINOR_SIXTH },
+  { name: "Dm6/A",     notes: ["A1", "B1", "F2"],   family: MINOR_SIXTH },
+  { name: "Dm6/B",     notes: ["B1", "F2", "A2"],   family: MINOR_SIXTH },
 
   //--- 7#5 ---
 
