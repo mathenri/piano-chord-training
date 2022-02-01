@@ -245,9 +245,8 @@ export const CHORDS = [
   { name: "Bm7b5/F",   notes: ["F1", "A1", "D2"],    family: MINOR_SEVENTH_FLAT_FIVE},
   { name: "Bm7b5/A",   notes: ["A1", "D2", "F2"],    family: MINOR_SEVENTH_FLAT_FIVE},
   
-
   //--- m6 ---
-  { name: "Cm6/Eb",    notes: ["D#1", "G1", "A1"],  family: MINOR_SIXTH},
+  { name: "Cm6/Eb",    notes: ["D#1", "G1", "A1"],  family: MINOR_SIXTH },
   { name: "Cm6/G",     notes: ["G1", "A1", "D#2"],  family: MINOR_SIXTH },
   { name: "Cm6/A",     notes: ["A1", "D#2", "G2"],  family: MINOR_SIXTH },
   { name: "C#m6/E",    notes: ["E1", "G#1", "A#1"], family: MINOR_SIXTH },
@@ -256,6 +255,36 @@ export const CHORDS = [
   { name: "Dm6/F",     notes: ["F1", "A1", "B1"],   family: MINOR_SIXTH },
   { name: "Dm6/A",     notes: ["A1", "B1", "F2"],   family: MINOR_SIXTH },
   { name: "Dm6/B",     notes: ["B1", "F2", "A2"],   family: MINOR_SIXTH },
+  { name: "Ebm6/Gb",   notes: ["F#1", "A#1", "C2"], family: MINOR_SIXTH },
+  { name: "Ebm6/Bb",   notes: ["A#1", "C2", "F#2"], family: MINOR_SIXTH },
+  { name: "Ebm6/C",    notes: ["C1", "F#2", "A#2"], family: MINOR_SIXTH },
+  { name: "Em6/G",     notes: ["G1", "B1", "C#2"],  family: MINOR_SIXTH },
+  { name: "Em6/B",     notes: ["B1", "C#2", "G2"],  family: MINOR_SIXTH },
+  { name: "Em6/C#",    notes: ["C#1", "G1", "B1"],  family: MINOR_SIXTH },
+  { name: "Fm6/Ab",    notes: ["G#1", "C2", "D2"],  family: MINOR_SIXTH },
+  { name: "Fm6/C",     notes: ["C1", "D1", "G#1"],  family: MINOR_SIXTH },
+  { name: "Fm6/D",     notes: ["D1", "G#1", "C2"],  family: MINOR_SIXTH },
+  { name: "F#m6/A",    notes: ["A1", "C#2", "D#2"], family: MINOR_SIXTH },
+  { name: "F#m6/C#",   notes: ["C#1", "D#1", "A1"], family: MINOR_SIXTH },
+  { name: "F#m6/D#",   notes: ["D#1", "A1", "C#2"], family: MINOR_SIXTH },
+  { name: "Gm6/Bb",    notes: ["A#1", "D2", "E2"],  family: MINOR_SIXTH },
+  { name: "Gm6/D",     notes: ["D1", "E1", "A#1"],  family: MINOR_SIXTH },
+  { name: "Gm6/E",     notes: ["E1", "A#1", "D2"],  family: MINOR_SIXTH },
+  { name: "Abm6/Cb",   notes: ["B1", "D#2", "F2"],  family: MINOR_SIXTH },
+  { name: "Abm6/Eb",   notes: ["D#1", "F1", "B1"],  family: MINOR_SIXTH },
+  { name: "Abm6/F",    notes: ["F1", "B1", "D#2"],  family: MINOR_SIXTH },
+  { name: "Am6/C",     notes: ["C1", "E1", "F#1"],  family: MINOR_SIXTH },
+  { name: "Am6/E",     notes: ["E1", "F#1", "C2"],  family: MINOR_SIXTH },
+  { name: "Am6/F#",    notes: ["F#1", "C2", "E2"],  family: MINOR_SIXTH },
+  { name: "Bbm6/Db",   notes: ["C#1", "F1", "G1"],  family: MINOR_SIXTH },
+  { name: "Bbm6/F",    notes: ["F1", "G1", "C#2"],  family: MINOR_SIXTH },
+  { name: "Bbm6/G",    notes: ["G1", "C#2", "F2"],  family: MINOR_SIXTH },
+  { name: "Bm6/D",     notes: ["D1", "F#1", "G#1"], family: MINOR_SIXTH },
+  { name: "Bm6/F#",    notes: ["F#1", "G#1", "D2"], family: MINOR_SIXTH },
+  { name: "Bm6/G#",    notes: ["G#1", "D2", "F#2"], family: MINOR_SIXTH },
+
+
+  // major 6
 
   //--- 7#5 ---
 
