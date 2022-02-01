@@ -4,6 +4,7 @@ import { CHORDS, CHORD_FAMILIES } from './chords.js'
 import { KEYS } from './pianoKeys.js'
 import { NO_ANSWER, CORRECT, INCORRECT } from './constants.js'
 import { getRandomElement, removeElement, sortByNoteOrder } from './utils.js'
+import Button from 'react-bootstrap/Button';
 
 class App extends Component {
   constructor(props) {
@@ -88,7 +89,7 @@ class App extends Component {
           })}
         </div>
 
-        { this.state.lastChordCorrect !== CORRECT && <button onClick={this.validateChord}>Validate</button>}
+        { this.state.lastChordCorrect !== CORRECT && <Button variant="primary" onClick={this.validateChord}>Validate</Button>}
 
         { this.state.lastChordCorrect !== NO_ANSWER && <p id="answer">{this.state.lastChordCorrect}</p>}
 

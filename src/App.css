@@ -2,21 +2,9 @@
   text-align: center;
 }
 
-html {
-   height: 100%;
-}
-
 body {
-   height: 100%;
    display: flex;
-   margin: auto;
    justify-content: center;
-   align-items: center;
-   background-color: #111;
-}
-
-label {
-  color: white;
 }
 
 .key {
@@ -52,8 +40,4 @@ label {
 
 #keyboard > .note:last-child {
    border-right: 0.12vw solid #aaa;
-}
-
-#asked-chord, #answer {
-  color: white;
 }
