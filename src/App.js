@@ -5,6 +5,8 @@ import { KEYS } from './pianoKeys.js'
 import { NO_ANSWER, CORRECT, INCORRECT } from './constants.js'
 import { getRandomElement, removeElement, sortByNoteOrder } from './utils.js'
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 class App extends Component {
   constructor(props) {
@@ -14,17 +16,20 @@ class App extends Component {
       selectedKeys: [],
       askedChord: getRandomElement(CHORDS),
       lastChordCorrect: NO_ANSWER,
-      selectedChordFamilies: new Set(CHORD_FAMILIES)
+      selectedChordFamilies: new Set(CHORD_FAMILIES),
+      showModal: false
     }
 
     this.validateChord = this.validateChord.bind(this)
     this.nextChord = this.nextChord.bind(this)
-    this.toggleKey = this.toggleKey.bind(this)
+    this.togglePianoKey = this.togglePianoKey.bind(this)
     this.handleChordFamilyCheckboxChanged = this.handleChordFamilyCheckboxChanged.bind(this)
-
+    this.closeModal = this.closeModal.bind(this)
+    this.openModal = this.openModal.bind(this)
   }
 
   handleChordFamilyCheckboxChanged(e) {
+    console.log("Here", e.target.name)
     const chordFamily = e.target.name
     const { selectedChordFamilies } = this.state
     if (selectedChordFamilies.has(chordFamily)) {
@@ -58,7 +63,7 @@ class App extends Component {
   }
 
   // toggles if a piano key is selected or not
-  toggleKey(keyId) {
+  togglePianoKey(keyId) {
     let { selectedKeys } = this.state
     if (!selectedKeys.includes(keyId)) {
       selectedKeys.push(keyId)
@@ -68,9 +73,45 @@ class App extends Component {
     this.setState({selectedKeys})
   }
 
+  closeModal() {
+    this.setState({showModal: false})
+  }
+
+  openModal() {
+    this.setState({showModal: true})
+  }
+
   render() {
     return (
       <div className="App">
+        <Modal show={this.state.showModal} onHide={this.closeModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Settings</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <p>Chord families</p>
+            <Form>
+              {CHORD_FAMILIES.map(chordFamily => (
+                <Form.Check
+                  type="switch"
+                  id={chordFamily}
+                  name={chordFamily}
+                  label={chordFamily}
+                  key={chordFamily}
+                  onChange={this.handleChordFamilyCheckboxChanged}
+                  checked={this.state.selectedChordFamilies.has(chordFamily)}
+                />
+              ))}
+            </Form>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button onClick={this.closeModal} variant="primary">OK</Button>
+          </Modal.Footer>
+        </Modal>
+
+        <Button variant="primary" onClick={this.openModal}>Settings</Button>
         
         <p id="asked-chord">Chord: {this.state.askedChord.name}</p>
 
@@ -84,7 +125,7 @@ class App extends Component {
               className={clazz}
               id={pianoKey.id}
               key={pianoKey.id}
-              onClick={() => this.toggleKey(pianoKey.id)}
+              onClick={() => this.togglePianoKey(pianoKey.id)}
             />
           })}
         </div>
@@ -93,22 +134,7 @@ class App extends Component {
 
         { this.state.lastChordCorrect !== NO_ANSWER && <p id="answer">{this.state.lastChordCorrect}</p>}
 
-        { this.state.lastChordCorrect === CORRECT && <button onClick={this.nextChord}>Next chord!</button>}
-
-        {CHORD_FAMILIES.map(chordFamily => (
-        <div>
-          <label>
-            <input 
-              name={chordFamily} 
-              type="checkbox"
-              key={chordFamily}
-              onChange={this.handleChordFamilyCheckboxChanged}
-              checked={this.state.selectedChordFamilies.has(chordFamily)}
-            />
-            {chordFamily}
-          </label>
-        </div>
-        ))}
+        { this.state.lastChordCorrect === CORRECT && <Button variant="primary" onClick={this.nextChord}>Next chord!</Button>}
       </div>
     );
   }
