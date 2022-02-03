@@ -1,3 +1,15 @@
+/* 
+$keyboard_Width:  90vw;
+$keyboard_Height: ($keyboard_Width * 0.18  );
+$border_Width:    ($keyboard_Width * 0.0015);
+$whiteKey_Count:  14;
+$whiteKey_Height: $keyboard_Height;
+$whiteKey_Width:  ($keyboard_Width / $whiteKey_Count);
+$blackKey_Height: ($whiteKey_Height * 0.55);
+$blackKey_Width:  ($whiteKey_Width  * 0.55);
+$blackKey_Offset: (-($blackKey_Width / 2) - $border_Width);
+*/
+
 .App {
   text-align: center;
 }
@@ -14,7 +26,7 @@ body {
 
 .white {
    height: 14.4vw;
-   width: 3.8095238095vw;
+   width: 5.714vw;
    z-index: 1;
    border-top: 0.12vw solid #aaa;
    border-bottom: 0.12vw solid #aaa;

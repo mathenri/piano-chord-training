@@ -1,16 +1,17 @@
-export const MAJOR = "Major"
-export const MAJOR_SEVENTH = "Major seventh"
-export const MAJOR_SIXTH = "Major sixth"
+const MAJOR = "M"
+const MAJOR_SEVENTH = "Mmaj7"
+const MAJOR_SIXTH = "M6"
 
-export const MINOR = "Minor"
-export const MINOR_SEVENTH = "Minor seventh"
-export const MINOR_SIXTH = "Minor sixth"
+const MINOR = "m"
+const MINOR_SEVENTH = "m7"
+const MINOR_SIXTH = "m6"
 
-export const DOMINANT_SEVENTH = "Dominant seventh"
-export const DOMINANT_SEVENTH_SHARP_FIVE = "Dominant seventh sharp five"
-export const DOMINANT_NINTH = "Dominant ninth"
+const DOMINANT_SEVENTH = "M7"
+const DOMINANT_SEVENTH_SHARP_FIVE = "M7#5"
+const DOMINANT_NINTH = "M9"
+const SUS_FOUR = "Msus4"
 
-export const MINOR_SEVENTH_FLAT_FIVE = "Minor seventh flat five"
+const MINOR_SEVENTH_FLAT_FIVE = "m7b5"
 
 
 
@@ -25,6 +26,7 @@ export const CHORD_FAMILIES = [
  MINOR_SEVENTH_FLAT_FIVE,
  MINOR_SIXTH,
  MAJOR_SIXTH,
+ SUS_FOUR
 ]
 
 export const CHORDS = [
@@ -140,11 +142,50 @@ export const CHORDS = [
   { name: "Bb6/D",  notes: ["D1", "G1", "A#1"],   family: MAJOR_SIXTH},
   { name: "B6/G#",  notes: ["G#1", "B1", "D#2"],  family: MAJOR_SIXTH},
   { name: "B6",     notes: ["B1", "D#1", "G#1"],  family: MAJOR_SIXTH},
-  { name: "B6/D#", notes: ["D#1", "G#1", "B2"],  family: MAJOR_SIXTH},
+  { name: "B6/D#",  notes: ["D#1", "G#1", "B2"],  family: MAJOR_SIXTH},
   
+  // sus4
+  { name: "Csus4",     notes: ["C1", "F1", "G1"],    family: SUS_FOUR},
+  { name: "Csus4/F",   notes: ["F1", "G1", "C2"],    family: SUS_FOUR},
+  { name: "Csus4/G",   notes: ["G1", "C2", "F2"],    family: SUS_FOUR},
+  { name: "Dbsus4",    notes: ["C#1", "F#1", "G#1"], family: SUS_FOUR},
+  { name: "Dbsus4/Gb", notes: ["F#1", "G#1", "C#2"], family: SUS_FOUR},
+  { name: "Dbsus4/Ab", notes: ["G#1", "C#2", "F#2"], family: SUS_FOUR},
+  { name: "Dsus4",     notes: ["D1", "G1", "A1"],    family: SUS_FOUR},
+  { name: "Dsus4/G",   notes: ["G1", "A1", "D2"],    family: SUS_FOUR},
+  { name: "Dsus4/A",   notes: ["A1", "D2", "G2"],    family: SUS_FOUR},
+  { name: "Ebsus4",    notes: ["D#1", "G#1", "A#1"], family: SUS_FOUR},
+  { name: "Ebsus4/Ab", notes: ["G#1", "A#1", "D#2"], family: SUS_FOUR},
+  { name: "Ebsus4/Bb", notes: ["A#1", "D#2", "G#2"], family: SUS_FOUR},
+  { name: "Esus4",     notes: ["E1", "A1", "B1"],    family: SUS_FOUR},
+  { name: "Esus4/A",   notes: ["A1", "B1", "E2"],    family: SUS_FOUR},
+  { name: "Esus4/B",   notes: ["B1", "E2", "A2"],    family: SUS_FOUR},
+  { name: "Fsus4",     notes: ["F1", "A#1", "C2"],   family: SUS_FOUR},
+  { name: "Fsus4/Bb",  notes: ["A#1", "C2", "F2"],   family: SUS_FOUR},
+  { name: "Fsus4/C",   notes: ["C1", "F2", "A#2"],   family: SUS_FOUR},
+  { name: "F#sus4",    notes: ["F#1", "B1", "C#2"],  family: SUS_FOUR},
+  { name: "F#sus4/B",  notes: ["B1", "C#2", "F#2"],  family: SUS_FOUR},
+  { name: "F#sus4/C#", notes: ["C#1", "F#2", "B2"],  family: SUS_FOUR},
+  { name: "Gsus4",     notes: ["G1", "C2", "D2"],    family: SUS_FOUR},
+  { name: "Gsus4/C",   notes: ["C1", "D1", "G1"],    family: SUS_FOUR},
+  { name: "Gsus4/D",   notes: ["D1", "G1", "C2"],    family: SUS_FOUR},
+  { name: "Absus4",    notes: ["G#1", "C#2", "D#2"], family: SUS_FOUR},
+  { name: "Absus4/Db", notes: ["C#1", "D#1", "G#1"], family: SUS_FOUR},
+  { name: "Absus4/Eb", notes: ["D#1", "G#1", "C#2"], family: SUS_FOUR},
+  { name: "Asus4",     notes: ["A1", "D2", "E2"],    family: SUS_FOUR},
+  { name: "Asus4/D",   notes: ["D1", "E1", "A1"],    family: SUS_FOUR},
+  { name: "Asus4/E",   notes: ["E1", "A1", "D2"],    family: SUS_FOUR},
+  { name: "Bbsus4",    notes: ["A#1", "D#2", "F2"],  family: SUS_FOUR},
+  { name: "Bbsus4/Eb", notes: ["D#1", "F1", "A#1"],  family: SUS_FOUR},
+  { name: "Bbsus4/F",  notes: ["F1", "A#1", "D#2"],  family: SUS_FOUR},
+  { name: "Bsus4",     notes: ["B1", "E2", "F#2"],   family: SUS_FOUR},
+  { name: "Bsus4/E",   notes: ["E1", "F#1", "B1"],   family: SUS_FOUR},
+  { name: "Bsus4/F#",  notes: ["F#1", "B1", "E2"],   family: SUS_FOUR},
+
+
+
   // 6/9
   //--- maj9 ---
-  // sus4
   // add9
   // 7sus4
 
