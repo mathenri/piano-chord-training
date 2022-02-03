@@ -1,16 +1,23 @@
 export const MAJOR = "Major"
-export const MINOR = "Minor"
-export const DOMINANT_SEVENTH = "Dominant seventh"
-export const MINOR_SEVENTH = "Minor seventh"
 export const MAJOR_SEVENTH = "Major seventh"
-export const MINOR_SEVENTH_FLAT_FIVE = "Minor seventh flat five"
-export const MINOR_SIXTH = "Minor sixth"
 export const MAJOR_SIXTH = "Major sixth"
+
+export const MINOR = "Minor"
+export const MINOR_SEVENTH = "Minor seventh"
+export const MINOR_SIXTH = "Minor sixth"
+
+export const DOMINANT_SEVENTH = "Dominant seventh"
+export const DOMINANT_SEVENTH_SHARP_FIVE = "Dominant seventh sharp five"
+
+export const MINOR_SEVENTH_FLAT_FIVE = "Minor seventh flat five"
+
+
 
 export const CHORD_FAMILIES = [
  MAJOR,
  MINOR,
  DOMINANT_SEVENTH,
+ DOMINANT_SEVENTH_SHARP_FIVE,
  MINOR_SEVENTH,
  MAJOR_SEVENTH,
  MINOR_SEVENTH_FLAT_FIVE,
@@ -296,10 +303,82 @@ export const CHORDS = [
   { name: "B7/A",   notes: ["A1", "D#2", "F#2"], family: DOMINANT_SEVENTH},
 
   //--- 7#5 ---
+  { name: "C7#5/E",     notes: ["E1", "G#1", "A#1"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "C7#5/G#",    notes: ["G#1", "A#1", "E2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "C7#5/Bb",    notes: ["A#1", "E2", "G#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Db7#5/F",    notes: ["F1", "A1", "B1"],   family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Db7#5/A",    notes: ["A1", "B1", "F2"],   family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Db7#5/Cb",   notes: ["B1", "F2", "A2"],   family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "D7#5/Gb",    notes: ["F#1", "A#1", "C2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "D7#5/A#",    notes: ["A#1", "C2", "F#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "D7#5/C",     notes: ["C1", "F#2", "A#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Eb7#5/G",    notes: ["G1", "B1", "C#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Eb7#5/B",    notes: ["B1", "C#2", "G2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Eb7#5/Db",   notes: ["C#1", "G1", "B1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "E7#5/G#",    notes: ["G#1", "C2", "D2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "E7#5/B#",     notes: ["C1", "D1", "G#1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "E7#5/D",     notes: ["D1", "G#1", "C2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "F7#5/A",     notes: ["A1", "C#2", "D#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "F7#5/C#",    notes: ["C#1", "D#1", "A1"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "F7#5/Eb",    notes: ["D#1", "A1", "C#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "F#7#5/A#",   notes: ["A#1", "D2", "E2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "F#7#5/D",    notes: ["D1", "E1", "A#1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "F#7#5/E",    notes: ["E1", "A#1", "D2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "G7#5/B",     notes: ["B1", "D#2", "F2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "G7#5/D#",    notes: ["D#1", "F1", "B1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "G7#5/F",     notes: ["F1", "B1", "D#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Ab7#5/C",     notes: ["C1", "E1", "F#1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Ab7#5/E",     notes: ["E1", "F#1", "C2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Ab7#5/Gb",    notes: ["F#1", "C2", "E2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "A7#5/C#",   notes: ["C#1", "F1", "G1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "A7#5/E#",    notes: ["F1", "G1", "C#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "A7#5/G",    notes: ["G1", "C#2", "F2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Bb7#5/D",     notes: ["D1", "F#1", "G#1"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Bb7#5/F#",    notes: ["F#1", "G#1", "D2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "Bb7#5/G#",    notes: ["G#1", "D2", "F#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "B7#5/D#",    notes: ["D#1", "G1", "A1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "B7#5/G",     notes: ["G1", "A1", "D#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  { name: "B7#5/A",     notes: ["A1", "D#2", "G2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
 
   //--- 7#9 ---
 
   // dominant 9th
+  // { name: "C7#5/E",     notes: ["E1", "G#1", "A#1"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "C7#5/G#",    notes: ["G#1", "A#1", "E2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "C7#5/Bb",    notes: ["A#1", "E2", "G#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Db7#5/F",    notes: ["F1", "A1", "B1"],   family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Db7#5/A",    notes: ["A1", "B1", "F2"],   family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Db7#5/Cb",   notes: ["B1", "F2", "A2"],   family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "D7#5/Gb",    notes: ["F#1", "A#1", "C2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "D7#5/A#",    notes: ["A#1", "C2", "F#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "D7#5/C",     notes: ["C1", "F#2", "A#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Eb7#5/G",    notes: ["G1", "B1", "C#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Eb7#5/B",    notes: ["B1", "C#2", "G2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Eb7#5/Db",   notes: ["C#1", "G1", "B1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "E7#5/G#",    notes: ["G#1", "C2", "D2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "E7#5/B#",     notes: ["C1", "D1", "G#1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "E7#5/D",     notes: ["D1", "G#1", "C2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "F7#5/A",     notes: ["A1", "C#2", "D#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "F7#5/C#",    notes: ["C#1", "D#1", "A1"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "F7#5/Eb",    notes: ["D#1", "A1", "C#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "F#7#5/A#",   notes: ["A#1", "D2", "E2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "F#7#5/D",    notes: ["D1", "E1", "A#1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "F#7#5/E",    notes: ["E1", "A#1", "D2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "G7#5/B",     notes: ["B1", "D#2", "F2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "G7#5/D#",    notes: ["D#1", "F1", "B1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "G7#5/F",     notes: ["F1", "B1", "D#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Ab7#5/C",     notes: ["C1", "E1", "F#1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Ab7#5/E",     notes: ["E1", "F#1", "C2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Ab7#5/Gb",    notes: ["F#1", "C2", "E2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "A7#5/C#",   notes: ["C#1", "F1", "G1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "A7#5/E#",    notes: ["F1", "G1", "C#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "A7#5/G",    notes: ["G1", "C#2", "F2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Bb7#5/D",     notes: ["D1", "F#1", "G#1"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Bb7#5/F#",    notes: ["F#1", "G#1", "D2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "Bb7#5/G#",    notes: ["G#1", "D2", "F#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "B7#5/D#",    notes: ["D#1", "G1", "A1"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "B7#5/G",     notes: ["G1", "A1", "D#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
+  // { name: "B7#5/A",     notes: ["A1", "D#2", "G2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
 
   // dominant 13th
 
