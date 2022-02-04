@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/piano-chord-training/static/css/main.cd54a9f2.css",
-    "main.js": "/piano-chord-training/static/js/main.1df97e03.js",
+    "main.js": "/piano-chord-training/static/js/main.dd068038.js",
     "index.html": "/piano-chord-training/index.html",
     "main.cd54a9f2.css.map": "/piano-chord-training/static/css/main.cd54a9f2.css.map",
-    "main.1df97e03.js.map": "/piano-chord-training/static/js/main.1df97e03.js.map"
+    "main.dd068038.js.map": "/piano-chord-training/static/js/main.dd068038.js.map"
   },
   "entrypoints": [
     "static/css/main.cd54a9f2.css",
-    "static/js/main.1df97e03.js"
+    "static/js/main.dd068038.js"
   ]
 }
