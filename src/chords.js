@@ -1,5 +1,6 @@
 const MAJOR = "C"
 const MAJOR_SEVENTH = "Cmaj7"
+const MAJOR_NINTH = "Cmaj9"
 const MAJOR_SIXTH = "C6"
 const ADD_NINE = "add9"
 
@@ -29,6 +30,7 @@ export const CHORD_FAMILIES = [
  DOMINANT_THIRTEENTH,
  MINOR_SEVENTH,
  MAJOR_SEVENTH,
+ MAJOR_NINTH,
  MINOR_SEVENTH_FLAT_FIVE,
  MINOR_SIXTH,
  MAJOR_SIXTH,
@@ -232,7 +234,44 @@ export const CHORDS = [
 
   // 7sus4
   // 6/9
+
   //--- maj9 ---
+  { name: "Cmaj9/D",    notes: ["D1", "E1", "B1"],     family: MAJOR_NINTH},
+  { name: "Cmaj9/E",    notes: ["E1", "B1", "D2"],     family: MAJOR_NINTH},
+  { name: "Cmaj9/B",    notes: ["B1", "D2", "E2"],     family: MAJOR_NINTH},
+  { name: "Dbmaj9/Eb",  notes: ["D#1", "F1", "C2"],    family: MAJOR_NINTH},
+  { name: "Dbmaj9/F",   notes: ["F1", "C2", "D#2"],    family: MAJOR_NINTH},
+  { name: "Dbmaj9/C",   notes: ["C1", "D#1", "F1"],    family: MAJOR_NINTH},
+  { name: "Dmaj9/E",    notes: ["E1", "F#1", "C#2"],   family: MAJOR_NINTH},
+  { name: "Dmaj9/F#",   notes: ["F#1", "C#2", "E2"],   family: MAJOR_NINTH},
+  { name: "Dmaj9/C#",   notes: ["C#1", "E1", "F#1"],   family: MAJOR_NINTH},
+  { name: "Ebmaj9/F",   notes: ["F1", "G1", "D2"],     family: MAJOR_NINTH},
+  { name: "Ebmaj9/G",   notes: ["G1", "D2", "F2"],     family: MAJOR_NINTH},
+  { name: "Ebmaj9/D",   notes: ["D1", "F1", "G1"],     family: MAJOR_NINTH},
+  { name: "Emaj9/F#",   notes: ["F#1", "G#1", "D#2"],  family: MAJOR_NINTH},
+  { name: "Emaj9/G#",   notes: ["G#1", "D#2", "F#2"],  family: MAJOR_NINTH},
+  { name: "Emaj9/D#",   notes: ["D#1", "F#1", "G#1"],  family: MAJOR_NINTH},
+  { name: "Fmaj9/G",    notes: ["G1", "A1", "E2"],     family: MAJOR_NINTH},
+  { name: "Fmaj9/A",    notes: ["A1", "E2", "G2"],     family: MAJOR_NINTH},
+  { name: "Fmaj9/E",    notes: ["E1", "G1", "A1"],     family: MAJOR_NINTH},
+  { name: "F#maj9/G#",  notes: ["G#1", "A#1", "F2"],   family: MAJOR_NINTH},
+  { name: "F#maj9/A#",  notes: ["A#1", "F2", "G#2"],   family: MAJOR_NINTH},
+  { name: "F#maj9/E#",  notes: ["F1", "G#1", "A#1"],   family: MAJOR_NINTH},
+  { name: "Gmaj9/A",    notes: ["A1", "B1", "F#2"],    family: MAJOR_NINTH},
+  { name: "Gmaj9/B",    notes: ["B1", "F#2", "A2"],    family: MAJOR_NINTH},
+  { name: "Gmaj9/F#",   notes: ["F#1", "A1", "B1"],    family: MAJOR_NINTH},
+  { name: "Abmaj9/Bb",  notes: ["A#1", "C2", "G2"],    family: MAJOR_NINTH},
+  { name: "Abmaj9/C",   notes: ["C1", "G1", "A#1"],    family: MAJOR_NINTH},
+  { name: "Abmaj9/G",   notes: ["G1", "A#1", "C2"],    family: MAJOR_NINTH},
+  { name: "Amaj9/B",    notes: ["B1", "C#2", "G#2"],   family: MAJOR_NINTH},
+  { name: "Amaj9/C#",   notes: ["C#1", "G#1", "B1"],   family: MAJOR_NINTH},
+  { name: "Amaj9/G#",   notes: ["G#1", "B1", "C#2"],   family: MAJOR_NINTH},
+  { name: "Bbmaj9/C",   notes: ["C1", "D1", "A1"],     family: MAJOR_NINTH},
+  { name: "Bbmaj9/D",   notes: ["D1", "A1", "C2"],     family: MAJOR_NINTH},
+  { name: "Bbmaj9/A",   notes: ["A1", "C2", "D2"],     family: MAJOR_NINTH},
+  { name: "Bmaj9/C#",   notes: ["C#1", "D#1", "A#1"],  family: MAJOR_NINTH},
+  { name: "Bmaj9/D#",   notes: ["D#1", "A#1", "C#2"],  family: MAJOR_NINTH},
+  { name: "Bmaj9/A#",   notes: ["A#1", "C#2", "D#2"],  family: MAJOR_NINTH},
 
   // --- minor ---
   { name: "Cm",     notes: ["C1", "D#1", "G1"],   family: MINOR},
