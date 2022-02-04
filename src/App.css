@@ -5,7 +5,7 @@ $blackKey_Offset: (-($blackKey_Width / 2) - $border_Width);
 :root {
   --white-key-count: 14;
   --keyboard-width: 95vw;
-  --keyboard-height: calc(var(--keyboard-width) * 0.18);
+  --keyboard-height: calc(var(--keyboard-width) * 0.25);
   --border-width: calc(var(--keyboard-width) * 0.0015);
   --white-key-width: calc(var(--keyboard-width) / var(--white-key-count));
   --black-key-height:  calc(var(--keyboard-height) * 0.6);
