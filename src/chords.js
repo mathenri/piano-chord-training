@@ -1,6 +1,7 @@
 const MAJOR = "C"
 const MAJOR_SEVENTH = "Cmaj7"
 const MAJOR_SIXTH = "C6"
+const ADD_NINE = "add9"
 
 const MINOR = "Cm"
 const MINOR_SEVENTH = "Cm7"
@@ -10,6 +11,8 @@ const MINOR_ELEVENTH = "Cm11"
 const DOMINANT_SEVENTH = "C7"
 const DOMINANT_SEVENTH_SHARP_FIVE = "C7#5"
 const DOMINANT_NINTH = "C9"
+const DOMINANT_SEVENTH_SHARP_NINE = "C7#9"
+const DOMINANT_THIRTEENTH = "C13"
 const SUS_FOUR = "Csus4"
 
 const MINOR_SEVENTH_FLAT_FIVE = "Cm7b5"
@@ -22,12 +25,15 @@ export const CHORD_FAMILIES = [
  DOMINANT_SEVENTH,
  DOMINANT_SEVENTH_SHARP_FIVE,
  DOMINANT_NINTH,
+ DOMINANT_SEVENTH_SHARP_NINE,
+ DOMINANT_THIRTEENTH,
  MINOR_SEVENTH,
  MAJOR_SEVENTH,
  MINOR_SEVENTH_FLAT_FIVE,
  MINOR_SIXTH,
  MAJOR_SIXTH,
  SUS_FOUR,
+ ADD_NINE,
  MINOR_ELEVENTH
 ]
 
@@ -184,13 +190,49 @@ export const CHORDS = [
   { name: "Bsus4",     notes: ["B1", "E2", "F#2"],   family: SUS_FOUR},
   { name: "Bsus4/E",   notes: ["E1", "F#1", "B1"],   family: SUS_FOUR},
   { name: "Bsus4/F#",  notes: ["F#1", "B1", "E2"],   family: SUS_FOUR},
+  
+  // add9
+  { name: "Cadd9/D",   notes: ["D1", "E1", "G1"],     family: ADD_NINE},
+  { name: "Cadd9/E",   notes: ["E1", "G1", "D2"],     family: ADD_NINE},
+  { name: "Cadd9/G",   notes: ["G1", "D2", "E2"],     family: ADD_NINE},
+  { name: "Dbadd9/Eb", notes: ["D#1", "F1", "G#1"],   family: ADD_NINE},
+  { name: "Dbadd9/F",  notes: ["F1", "G#1", "D#2"],   family: ADD_NINE},
+  { name: "Dbadd9/Ab", notes: ["G#1", "D#2", "F2"],   family: ADD_NINE},
+  { name: "Dadd9/E",   notes: ["E1", "F#1", "A1"],    family: ADD_NINE},
+  { name: "Dadd9/F#",  notes: ["F#1", "A1", "E2"],    family: ADD_NINE},
+  { name: "Dadd9/A",   notes: ["A1", "E2", "F#2"],    family: ADD_NINE},
+  { name: "Ebadd9/F",  notes: ["F1", "G1", "A#1"],    family: ADD_NINE},
+  { name: "Ebadd9/G",  notes: ["G1", "A#1", "F2"],    family: ADD_NINE},
+  { name: "Ebadd9/Bb", notes: ["A#1", "F2", "G2"],    family: ADD_NINE},
+  { name: "Eadd9/F#",  notes: ["F#1", "G#1", "B1"],   family: ADD_NINE},
+  { name: "Eadd9/G#",  notes: ["G#1", "B1", "F#2"],   family: ADD_NINE},
+  { name: "Eadd9/B",   notes: ["B1", "F#2", "G#2"],   family: ADD_NINE},
+  { name: "Fadd9/G",   notes: ["G1", "A1", "C2"],     family: ADD_NINE},
+  { name: "Fadd9/A",   notes: ["A1", "C2", "G2"],     family: ADD_NINE},
+  { name: "Fadd9/C",   notes: ["C1", "G1", "A1"],     family: ADD_NINE},
+  { name: "F#add9/G#", notes: ["G#1", "A#1", "C#2"],  family: ADD_NINE},
+  { name: "F#add9/A#", notes: ["A#1", "C#2", "G#2"],  family: ADD_NINE},
+  { name: "F#add9/C#", notes: ["C#1", "G#1", "A#1"],  family: ADD_NINE},
+  { name: "Gadd9/A",   notes: ["A1", "B1", "D2"],     family: ADD_NINE},
+  { name: "Gadd9/B",   notes: ["B1", "D2", "A2"],     family: ADD_NINE},
+  { name: "Gadd9/D",   notes: ["D1", "A1", "B1"],     family: ADD_NINE},
+  { name: "Abadd9/Bb", notes: ["A#1", "C2", "D#2"],   family: ADD_NINE},
+  { name: "Abadd9/C",  notes: ["C1", "D#1", "A#1"],   family: ADD_NINE},
+  { name: "Abadd9/Eb", notes: ["D#1", "A#1", "C2"],   family: ADD_NINE},
+  { name: "Aadd9/B",   notes: ["B1", "C#2", "E2"],    family: ADD_NINE},
+  { name: "Aadd9/C#",  notes: ["C#1", "E1", "B1"],    family: ADD_NINE},
+  { name: "Aadd9/E",   notes: ["E1", "B1", "C#2"],    family: ADD_NINE},
+  { name: "Bbadd9/C",  notes: ["C1", "D1", "F2"],     family: ADD_NINE},
+  { name: "Bbadd9/D",  notes: ["D1", "F1", "C2"],     family: ADD_NINE},
+  { name: "Bbadd9/F",  notes: ["F1", "C2", "D2"],     family: ADD_NINE},
+  { name: "Badd9/C#",  notes: ["C#1", "D#1", "F#2"],  family: ADD_NINE},
+  { name: "Badd9/D#",  notes: ["D#1", "F#1", "C#2"],  family: ADD_NINE},
+  { name: "Badd9/F#",  notes: ["F#1", "C#2", "D#2"],  family: ADD_NINE},
 
 
-
+  // 7sus4
   // 6/9
   //--- maj9 ---
-  // add9
-  // 7sus4
 
   // --- minor ---
   { name: "Cm",     notes: ["C1", "D#1", "G1"],   family: MINOR},
@@ -435,6 +477,32 @@ export const CHORDS = [
   { name: "B7#5",     notes: ["A1", "D#2", "G2"],  family: DOMINANT_SEVENTH_SHARP_FIVE },
 
   //--- 7#9 ---
+  { name: "C7#9",     notes: ["E1", "A#1", "D#2"], family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "Db7#9",    notes: ["F1", "B1", "E2"],   family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "D7#9",     notes: ["F#1", "C2", "F2"],  family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "Eb7#9",    notes: ["G1", "C#2", "F#2"], family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "E7#9",     notes: ["G#1", "D2", "G2"],  family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "F7#9",     notes: ["A1", "D#2", "G#2"], family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "F#7#9",    notes: ["A#1", "E2", "A2"],  family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "G7#9",     notes: ["B1", "F2", "A#2"],  family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "Ab7#9",    notes: ["C1", "F#1", "B1"],  family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "A7#9",     notes: ["C#1", "G1", "C2"],  family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "Bb7#9",    notes: ["D1", "G#1", "C#2"], family: DOMINANT_SEVENTH_SHARP_NINE },
+  { name: "B7#9",     notes: ["D#1", "A1", "D2"],  family: DOMINANT_SEVENTH_SHARP_NINE },
+
+  // dominant 13th
+  { name: "F#13",     notes: ["E1", "A#1", "D#2"], family: DOMINANT_THIRTEENTH },
+  { name: "G13",      notes: ["F1", "B1", "E2"],   family: DOMINANT_THIRTEENTH },
+  { name: "Ab13",     notes: ["F#1", "C2", "F2"],  family: DOMINANT_THIRTEENTH },
+  { name: "A13",      notes: ["G1", "C#2", "F#2"], family: DOMINANT_THIRTEENTH },
+  { name: "Bb13",     notes: ["G#1", "D2", "G2"],  family: DOMINANT_THIRTEENTH },
+  { name: "B13",      notes: ["A1", "D#2", "G#2"], family: DOMINANT_THIRTEENTH },
+  { name: "C13",      notes: ["A#1", "E2", "A2"],  family: DOMINANT_THIRTEENTH },
+  { name: "Db13",     notes: ["B1", "F2", "A#2"],  family: DOMINANT_THIRTEENTH },
+  { name: "D13",      notes: ["C1", "F#1", "B1"],  family: DOMINANT_THIRTEENTH },
+  { name: "Eb13",     notes: ["C#1", "G1", "C2"],  family: DOMINANT_THIRTEENTH },
+  { name: "E13",      notes: ["D1", "G#1", "C#2"], family: DOMINANT_THIRTEENTH },
+  { name: "F13",      notes: ["D#1", "A1", "D2"],  family: DOMINANT_THIRTEENTH },
 
   // dominant 9th
   { name: "F#9/E",     notes: ["E1", "G#1", "A#1"], family: DOMINANT_NINTH },
@@ -474,7 +542,6 @@ export const CHORDS = [
   { name: "F9/G",      notes: ["G1", "A1", "D#2"],  family: DOMINANT_NINTH },
   { name: "F9/A",      notes: ["A1", "D#2", "G2"],  family: DOMINANT_NINTH },
 
-  // dominant 13th
   // 7b9
   // 7b5
 
