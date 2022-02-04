@@ -1,17 +1,18 @@
-const MAJOR = "M"
-const MAJOR_SEVENTH = "Mmaj7"
-const MAJOR_SIXTH = "M6"
+const MAJOR = "C"
+const MAJOR_SEVENTH = "Cmaj7"
+const MAJOR_SIXTH = "C6"
 
-const MINOR = "m"
-const MINOR_SEVENTH = "m7"
-const MINOR_SIXTH = "m6"
+const MINOR = "Cm"
+const MINOR_SEVENTH = "Cm7"
+const MINOR_SIXTH = "Cm6"
+const MINOR_ELEVENTH = "Cm11"
 
-const DOMINANT_SEVENTH = "M7"
-const DOMINANT_SEVENTH_SHARP_FIVE = "M7#5"
-const DOMINANT_NINTH = "M9"
-const SUS_FOUR = "Msus4"
+const DOMINANT_SEVENTH = "C7"
+const DOMINANT_SEVENTH_SHARP_FIVE = "C7#5"
+const DOMINANT_NINTH = "C9"
+const SUS_FOUR = "Csus4"
 
-const MINOR_SEVENTH_FLAT_FIVE = "m7b5"
+const MINOR_SEVENTH_FLAT_FIVE = "Cm7b5"
 
 
 
@@ -26,7 +27,8 @@ export const CHORD_FAMILIES = [
  MINOR_SEVENTH_FLAT_FIVE,
  MINOR_SIXTH,
  MAJOR_SIXTH,
- SUS_FOUR
+ SUS_FOUR,
+ MINOR_ELEVENTH
 ]
 
 export const CHORDS = [
@@ -107,6 +109,7 @@ export const CHORDS = [
   { name: "Bmaj7/A#",  notes: ["A#1", "D#2", "F#2"], family: MAJOR_SEVENTH},
 
   // major 6
+  // Todo: 1 -> 5th
   { name: "C6/A",   notes: ["A1", "C2", "E2"],    family: MAJOR_SIXTH},
   { name: "C6/C",   notes: ["C1", "E1", "A1"],    family: MAJOR_SIXTH},
   { name: "C6/E",   notes: ["E1", "A1", "C2"],    family: MAJOR_SIXTH},
@@ -306,6 +309,42 @@ export const CHORDS = [
   // m9
 
   // m11
+  { name: "Dm11/C",   notes: ["C1", "F1", "G1"],    family: MINOR_ELEVENTH},
+  { name: "Dm11/F",   notes: ["F1", "G1", "C2"],    family: MINOR_ELEVENTH},
+  { name: "Dm11/G",   notes: ["G1", "C2", "F2"],    family: MINOR_ELEVENTH},
+  { name: "Ebm11/Db", notes: ["C#1", "F#1", "G#1"], family: MINOR_ELEVENTH},
+  { name: "Ebm11/Gb", notes: ["F#1", "G#1", "C#2"], family: MINOR_ELEVENTH},
+  { name: "Ebm11/Ab", notes: ["G#1", "C#2", "F#2"], family: MINOR_ELEVENTH},
+  { name: "Em11/D",   notes: ["D1", "G1", "A1"],    family: MINOR_ELEVENTH},
+  { name: "Em11/G",   notes: ["G1", "A1", "D2"],    family: MINOR_ELEVENTH},
+  { name: "Em11/A",   notes: ["A1", "D2", "G2"],    family: MINOR_ELEVENTH},
+  { name: "Fm11/Eb",  notes: ["D#1", "G#1", "A#1"], family: MINOR_ELEVENTH},
+  { name: "Fm11/Ab",  notes: ["G#1", "A#1", "D#2"], family: MINOR_ELEVENTH},
+  { name: "Fm11/Bb",  notes: ["A#1", "D#2", "G#2"], family: MINOR_ELEVENTH},
+  { name: "F#m11/E",  notes: ["E1", "A1", "B1"],    family: MINOR_ELEVENTH},
+  { name: "F#m11/A",  notes: ["A1", "B1", "E2"],    family: MINOR_ELEVENTH},
+  { name: "F#m11/B",  notes: ["B1", "E2", "A2"],    family: MINOR_ELEVENTH},
+  { name: "Gm11/F",   notes: ["F1", "A#1", "C2"],   family: MINOR_ELEVENTH},
+  { name: "Gm11/Bb",  notes: ["A#1", "C2", "F2"],   family: MINOR_ELEVENTH},
+  { name: "Gm11/C",   notes: ["C1", "F2", "A#2"],   family: MINOR_ELEVENTH},
+  { name: "Abm11/Gb", notes: ["F#1", "B1", "C#2"],  family: MINOR_ELEVENTH},
+  { name: "Abm11/Cb", notes: ["B1", "C#2", "F#2"],  family: MINOR_ELEVENTH},
+  { name: "Abm11/Db", notes: ["C#1", "F#2", "B2"],  family: MINOR_ELEVENTH},
+  { name: "Am11/G",   notes: ["G1", "C2", "D2"],    family: MINOR_ELEVENTH},
+  { name: "Am11/C",   notes: ["C1", "D1", "G1"],    family: MINOR_ELEVENTH},
+  { name: "Am11/D",   notes: ["D1", "G1", "C2"],    family: MINOR_ELEVENTH},
+  { name: "Bbm11/Ab", notes: ["G#1", "C#2", "D#2"], family: MINOR_ELEVENTH},
+  { name: "Bbm11/Db", notes: ["C#1", "D#1", "G#1"], family: MINOR_ELEVENTH},
+  { name: "Bbm11/Eb", notes: ["D#1", "G#1", "C#2"], family: MINOR_ELEVENTH},
+  { name: "Bm11/A",   notes: ["A1", "D2", "E2"],    family: MINOR_ELEVENTH},
+  { name: "Bm11/D",   notes: ["D1", "E1", "A1"],    family: MINOR_ELEVENTH},
+  { name: "Bm11/E",   notes: ["E1", "A1", "D2"],    family: MINOR_ELEVENTH},
+  { name: "Cm11/Bb",  notes: ["A#1", "D#2", "F2"],  family: MINOR_ELEVENTH},
+  { name: "Cm11/Eb",  notes: ["D#1", "F1", "A#1"],  family: MINOR_ELEVENTH},
+  { name: "Cm11/F",   notes: ["F1", "A#1", "D#2"],  family: MINOR_ELEVENTH},
+  { name: "C#m11/B",  notes: ["B1", "E2", "F#2"],   family: MINOR_ELEVENTH},
+  { name: "C#m11/E",  notes: ["E1", "F#1", "B1"],   family: MINOR_ELEVENTH},
+  { name: "C#m11/F#", notes: ["F#1", "B1", "E2"],   family: MINOR_ELEVENTH},
 
   //--- dominant 7th ---
   { name: "C7/E",   notes: ["E1", "G1", "A#1"],  family: DOMINANT_SEVENTH},
@@ -346,6 +385,7 @@ export const CHORDS = [
   { name: "B7/A",   notes: ["A1", "D#2", "F#2"], family: DOMINANT_SEVENTH},
 
   //--- 7#5 ---
+  // only 7-3-#5 inversion?
   { name: "C7#5/E",     notes: ["E1", "G#1", "A#1"], family: DOMINANT_SEVENTH_SHARP_FIVE },
   { name: "C7#5/G#",    notes: ["G#1", "A#1", "E2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
   { name: "C7#5/Bb",    notes: ["A#1", "E2", "G#2"], family: DOMINANT_SEVENTH_SHARP_FIVE },
