@@ -1,14 +1,17 @@
 /* 
-$keyboard_Width:  90vw;
-$keyboard_Height: ($keyboard_Width * 0.18  );
-$border_Width:    ($keyboard_Width * 0.0015);
-$whiteKey_Count:  14;
-$whiteKey_Height: $keyboard_Height;
-$whiteKey_Width:  ($keyboard_Width / $whiteKey_Count);
-$blackKey_Height: ($whiteKey_Height * 0.55);
-$blackKey_Width:  ($whiteKey_Width  * 0.55);
+
 $blackKey_Offset: (-($blackKey_Width / 2) - $border_Width);
 */
+:root {
+  --white-key-count: 14;
+  --keyboard-width: 95vw;
+  --keyboard-height: calc(var(--keyboard-width) * 0.18);
+  --border-width: calc(var(--keyboard-width) * 0.0015);
+  --white-key-width: calc(var(--keyboard-width) / var(--white-key-count));
+  --black-key-height:  calc(var(--keyboard-height) * 0.6);
+  --black-key-width:  calc(var(--white-key-width) * 0.5);
+  --black-key-offset:  calc((-1 * var(--black-key-width)  / 2 ) - var(--border-width));
+}
 
 .App {
   text-align: center;
@@ -25,20 +28,20 @@ body {
 }
 
 .white {
-   height: 14.4vw;
-   width: 5.714vw;
+   height: var(--keyboard-height);
+   width: var(--white-key-width);
    z-index: 1;
-   border-top: 0.12vw solid #aaa;
-   border-bottom: 0.12vw solid #aaa;
-   border-left: 0.12vw solid #aaa;
+   border-top: var(--border-width) solid #aaa;
+   border-bottom: var(--border-width) solid #aaa;
+   border-left: var(--border-width) solid #aaa;
    background-color: #cbcbcb;
 }
 
 .black {
-   height: 7.92vw;
-   width: 2.0952380952vw;
+   height: var(--black-key-height);
+   width: var(--black-key-width);
    z-index: 2;
-   border: 0.12vw solid #000;
+   border: var(--border-width) solid #000;
    background-color: #222;
 }
 
@@ -47,9 +50,9 @@ body {
 }
  
 .a, .b, .d, .e, .g, .black {
-   margin: 0 0 0 -1.1676190476vw;
+   margin: 0 0 0 var(--black-key-offset);
 }
 
 #keyboard > .note:last-child {
-   border-right: 0.12vw solid #aaa;
+   border-right: var(--border-width) solid #aaa;
 }
