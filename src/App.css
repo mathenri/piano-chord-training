@@ -5,7 +5,7 @@ $blackKey_Offset: (-($blackKey_Width / 2) - $border_Width);
 :root {
   --white-key-count: 14;
   --keyboard-width: 95vw;
-  --keyboard-height: calc(var(--keyboard-width) * 0.25);
+  --keyboard-height: calc(var(--keyboard-width) * 0.20);
   --border-width: calc(var(--keyboard-width) * 0.0015);
   --white-key-width: calc(var(--keyboard-width) / var(--white-key-count));
   --black-key-height:  calc(var(--keyboard-height) * 0.6);
@@ -53,10 +53,22 @@ body {
    margin: 0 0 0 var(--black-key-offset);
 }
 
+#keyboard {
+  height: var(--keyboard-height); /* Fix so next div is below is placed below this. Is this the correct way to do it though? */
+}
+
 #keyboard > .note:last-child {
    border-right: var(--border-width) solid #aaa;
 }
 
 #asked-chord {
   font-size: 22px;
+}
+
+#result-container {
+  padding: 10px;
+}
+
+.invisible {
+  background-color: white; /* TODO: better solution for this? */
 }

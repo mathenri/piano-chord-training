@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   handleChordFamilyCheckboxChanged(e) {
-    console.log("Here", e.target.name)
     const chordFamily = e.target.name
     const { selectedChordFamilies } = this.state
     if (selectedChordFamilies.has(chordFamily)) {
@@ -110,8 +109,6 @@ class App extends Component {
             <Button onClick={this.closeModal} variant="primary">OK</Button>
           </Modal.Footer>
         </Modal>
-
-        <Button variant="primary" onClick={this.openModal}>Settings</Button>
         
         <p id="asked-chord">Chord: {this.state.askedChord.name}</p>
 
@@ -129,12 +126,17 @@ class App extends Component {
             />
           })}
         </div>
+        <div id="result-container">
 
-        { this.state.lastChordCorrect !== CORRECT && <Button variant="primary" onClick={this.validateChord}>Validate</Button>}
+        <p id="answer" className={this.state.lastChordCorrect === NO_ANSWER ? "invisible" : "visible"}>{this.state.lastChordCorrect}</p>
+        
+        { this.state.lastChordCorrect !== CORRECT && <Button id="validate-button" size="lg" variant="primary" onClick={this.validateChord}>Validate</Button>}
 
-        { this.state.lastChordCorrect !== NO_ANSWER && <p id="answer">{this.state.lastChordCorrect}</p>}
-
-        { this.state.lastChordCorrect === CORRECT && <Button variant="primary" onClick={this.nextChord}>Next chord!</Button>}
+        { this.state.lastChordCorrect === CORRECT && <Button variant="primary" size="lg" onClick={this.nextChord}>Next chord!</Button>}
+        </div>
+        <div>
+          <Button variant="outline-secondary" size="lg" onClick={this.openModal}>Settings</Button>
+        </div>
       </div>
     );
   }
