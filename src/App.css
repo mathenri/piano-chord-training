@@ -56,3 +56,7 @@ body {
 #keyboard > .note:last-child {
    border-right: var(--border-width) solid #aaa;
 }
+
+#asked-chord {
+  font-size: 22px;
+}

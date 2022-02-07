@@ -18,6 +18,8 @@ const SUS_FOUR = "Csus4"
 
 const MINOR_SEVENTH_FLAT_FIVE = "Cm7b5"
 
+const DIM = "Cdim"
+
 
 
 export const CHORD_FAMILIES = [
@@ -32,6 +34,7 @@ export const CHORD_FAMILIES = [
  MAJOR_SEVENTH,
  MAJOR_NINTH,
  MINOR_SEVENTH_FLAT_FIVE,
+ DIM,
  MINOR_SIXTH,
  MAJOR_SIXTH,
  SUS_FOUR,
@@ -623,5 +626,42 @@ export const CHORDS = [
   { name: "Bm7b5/A",   notes: ["A1", "D2", "F2"],    family: MINOR_SEVENTH_FLAT_FIVE},
 
   // dim
+  { name: "Cdim/Eb",  notes: ["D#1", "F#1", "A1"],  family: DIM},
+  { name: "Cdim/F#",  notes: ["F#1", "A1", "D#2"],  family: DIM},
+  { name: "Cdim/A",   notes: ["A1", "D#2", "F#2"],  family: DIM},
+  { name: "C#dim/E",  notes: ["E1", "G1", "A#1"],   family: DIM},
+  { name: "C#dim/G",  notes: ["G1", "A#1", "E2"],   family: DIM},
+  { name: "C#dim/Bb", notes: ["A#1", "E2", "G2"],   family: DIM},
+  { name: "Ddim/F",   notes: ["F1", "G#1", "B1"],   family: DIM},
+  { name: "Ddim/Ab",  notes: ["G#1", "B1", "F2"],   family: DIM},
+  { name: "Ddim/B",   notes: ["B1", "F2", "G#2"],   family: DIM},
+  { name: "Ebdim/C",  notes: ["C1", "F#1", "A1"],   family: DIM},
+  { name: "Ebdim/F#", notes: ["F#1", "A1", "C2"],   family: DIM},
+  { name: "Ebdim/A",  notes: ["A1", "C2", "F#2"],   family: DIM},
+  { name: "Edim/C#",  notes: ["C#1", "G1", "A#1"],  family: DIM},
+  { name: "Edim/G",   notes: ["G1", "A#1", "C#2"],  family: DIM},
+  { name: "Edim/Bb",  notes: ["A#1", "C#2", "G2"],  family: DIM},
+  { name: "Fdim/D",   notes: ["D1", "G#1", "B1"],   family: DIM},
+  { name: "Fdim/Ab",  notes: ["G#1", "B1", "D2"],   family: DIM},
+  { name: "Fdim/B",   notes: ["B1", "D2", "G#2"],   family: DIM},
+  { name: "F#dim/C",  notes: ["C1", "D#1", "A1"],   family: DIM},
+  { name: "F#dim/Eb", notes: ["D#1", "A1", "C2"],   family: DIM},
+  { name: "F#dim/A",  notes: ["A1", "C2", "D#2"],   family: DIM},
+  { name: "Gdim/C#",  notes: ["C#1", "E1", "A#1"],  family: DIM},
+  { name: "Gdim/E",   notes: ["E1", "A#1", "C#2"],  family: DIM},
+  { name: "Gdim/Bb",  notes: ["A#1", "C#2", "E2"],  family: DIM},
+  { name: "Abdim/D",  notes: ["D1", "F1", "B1"],    family: DIM},
+  { name: "Abdim/F",  notes: ["F1", "B1", "D2"],    family: DIM},
+  { name: "Abdim/B",  notes: ["B1", "D2", "F2"],    family: DIM},
+  { name: "Adim/C",   notes: ["C1", "D#1", "F#1"],  family: DIM},
+  { name: "Adim/Eb",  notes: ["D#1", "F#1", "C2"],  family: DIM},
+  { name: "Adim/F#",  notes: ["F#1", "C2", "D#2"],  family: DIM},
+  { name: "Bbdim/C#", notes: ["C#1", "E1", "G1"],   family: DIM},
+  { name: "Bbdim/E",  notes: ["E1", "G1", "C#2"],   family: DIM},
+  { name: "Bbdim/G",  notes: ["G1", "C#2", "E2"],   family: DIM},
+  { name: "Bdim/D",   notes: ["D1", "F1", "G#1"],   family: DIM},
+  { name: "Bdim/F",   notes: ["F1", "G#1", "D2"],   family: DIM},
+  { name: "Bdim/Ab",  notes: ["G#1", "D2", "F2"],   family: DIM},
+  // ...
 
 ]
