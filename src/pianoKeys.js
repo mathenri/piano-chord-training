@@ -1,4 +1,4 @@
-export const KEYS = [
+export const PIANO_KEYS = [
   { class: "key white c", id: "C1"},
   { class: "key black c_sharp", id: "C#1"},
   { class: "key white d", id: "D1"},

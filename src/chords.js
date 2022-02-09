@@ -10,19 +10,18 @@ const MINOR_NINTH =    { name: "Cm9",  extension: "9",  minor: true }
 const MINOR_SIXTH =    { name: "Cm6",  extension: "6",  minor: true } 
 const MINOR_ELEVENTH = { name: "Cm11", extension: "11", minor: true } 
 
-const DOMINANT_SEVENTH =            { name: "C7",    extension: "7" } 
-const DOMINANT_SEVENTH_SHARP_FIVE = { name: "C7#5",  extension: "7#5" } 
-const DOMINANT_NINTH =              { name: "C9",    extension: "9" } 
-const DOMINANT_FLAT_NINE =          { name: "C7b9",  extension: "7b9" } 
-const DOMINANT_SEVENTH_SHARP_NINE = { name: "C7#9",  extension: "7#9" } 
-const DOMINANT_THIRTEENTH =         { name: "C13",   extension: "13" } 
-const SUS_FOUR =                    { name: "Csus4", extension: "sus4" } 
+const DOMINANT_SEVENTH =            { name: "C7",     extension: "7" } 
+const DOMINANT_SEVENTH_SHARP_FIVE = { name: "C7#5",   extension: "7#5" } 
+const DOMINANT_NINTH =              { name: "C9",     extension: "9" } 
+const DOMINANT_FLAT_NINE =          { name: "C7b9",   extension: "7b9" } 
+const DOMINANT_SEVENTH_SHARP_NINE = { name: "C7#9",   extension: "7#9" } 
+const DOMINANT_THIRTEENTH =         { name: "C13",    extension: "13" } 
+const SUS_FOUR =                    { name: "Csus4",  extension: "sus4" }
+const SEVEN_SUS_FOUR =              { name: "C7sus4", extension: "7sus4" }
 
 const MINOR_SEVENTH_FLAT_FIVE = { name: "Cm7b5", extension: "7b5", minor: true } 
 
 const DIM = { name: "Cdim", extension: "dim" }
-
-
 
 export const CHORD_FAMILIES = [
  MAJOR,
@@ -43,7 +42,8 @@ export const CHORD_FAMILIES = [
  MAJOR_SIXTH,
  SUS_FOUR,
  ADD_NINE,
- MINOR_ELEVENTH
+ MINOR_ELEVENTH,
+ SEVEN_SUS_FOUR
 ]
 
 export const CHORDS = [
@@ -240,6 +240,43 @@ export const CHORDS = [
 
 
     // 7sus4
+{ name: "A7sus4/D",   notes: ["D1", "E1", "G1"],    family: SEVEN_SUS_FOUR, rootNote: "A", baseNote: "D"},
+{ name: "A7sus4/E",   notes: ["E1", "G1", "D2"],    family: SEVEN_SUS_FOUR, rootNote: "A", baseNote: "E"},
+{ name: "A7sus4/G",   notes: ["G1", "D2", "E2"],    family: SEVEN_SUS_FOUR, rootNote: "A", baseNote: "G"},
+{ name: "Bb7sus4/Eb", notes: ["D#1", "F1", "G#1"],  family: SEVEN_SUS_FOUR, rootNote: "Bb", baseNote: "Eb"},
+{ name: "Bb7sus4/F",  notes: ["F1", "G#1", "D#2"],  family: SEVEN_SUS_FOUR, rootNote: "Bb", baseNote: "F"},
+{ name: "Bb7sus4/Ab", notes: ["G#1", "D#2", "F2"],  family: SEVEN_SUS_FOUR, rootNote: "Bb", baseNote: "Ab"},
+{ name: "B7sus4/E",   notes: ["E1", "F#1", "A1"],   family: SEVEN_SUS_FOUR, rootNote: "B", baseNote: "E"},
+{ name: "B7sus4/F#",  notes: ["F#1", "A1", "E2"],   family: SEVEN_SUS_FOUR, rootNote: "B", baseNote: "F#"},
+{ name: "B7sus4/A",   notes: ["A1", "E2", "F#2"],   family: SEVEN_SUS_FOUR, rootNote: "B", baseNote: "A"},
+// { name: "Ebadd9/F",  notes: ["F1", "G1", "A#1"],    family: SEVEN_SUS_FOUR, rootNote: "Eb", baseNote: "F"},
+// { name: "Ebadd9/G",  notes: ["G1", "A#1", "F2"],    family: SEVEN_SUS_FOUR, rootNote: "Eb", baseNote: "G"},
+// { name: "Ebadd9/Bb", notes: ["A#1", "F2", "G2"],    family: SEVEN_SUS_FOUR, rootNote: "Eb", baseNote: "Bb"},
+// { name: "Eadd9/F#",  notes: ["F#1", "G#1", "B1"],   family: SEVEN_SUS_FOUR, rootNote: "E", baseNote: "F#"},
+// { name: "Eadd9/G#",  notes: ["G#1", "B1", "F#2"],   family: SEVEN_SUS_FOUR, rootNote: "E", baseNote: "G#"},
+// { name: "Eadd9/B",   notes: ["B1", "F#2", "G#2"],   family: SEVEN_SUS_FOUR, rootNote: "E", baseNote: "B"},
+// { name: "Fadd9/G",   notes: ["G1", "A1", "C2"],     family: SEVEN_SUS_FOUR, rootNote: "F", baseNote: "G"},
+// { name: "Fadd9/A",   notes: ["A1", "C2", "G2"],     family: SEVEN_SUS_FOUR, rootNote: "F", baseNote: "A"},
+// { name: "Fadd9/C",   notes: ["C1", "G1", "A1"],     family: SEVEN_SUS_FOUR, rootNote: "F", baseNote: "C"},
+// { name: "F#add9/G#", notes: ["G#1", "A#1", "C#2"],  family: SEVEN_SUS_FOUR, rootNote: "F#", baseNote: "G#"},
+// { name: "F#add9/A#", notes: ["A#1", "C#2", "G#2"],  family: SEVEN_SUS_FOUR, rootNote: "F#", baseNote: "A#"},
+// { name: "F#add9/C#", notes: ["C#1", "G#1", "A#1"],  family: SEVEN_SUS_FOUR, rootNote: "F#", baseNote: "C#"},
+// { name: "Gadd9/A",   notes: ["A1", "B1", "D2"],     family: SEVEN_SUS_FOUR, rootNote: "G", baseNote: "A"},
+// { name: "Gadd9/B",   notes: ["B1", "D2", "A2"],     family: SEVEN_SUS_FOUR, rootNote: "G", baseNote: "B"},
+// { name: "Gadd9/D",   notes: ["D1", "A1", "B1"],     family: SEVEN_SUS_FOUR, rootNote: "G", baseNote: "D"},
+// { name: "Abadd9/Bb", notes: ["A#1", "C2", "D#2"],   family: SEVEN_SUS_FOUR, rootNote: "Ab", baseNote: "Bb"},
+// { name: "Abadd9/C",  notes: ["C1", "D#1", "A#1"],   family: SEVEN_SUS_FOUR, rootNote: "Ab", baseNote: "C"},
+// { name: "Abadd9/Eb", notes: ["D#1", "A#1", "C2"],   family: SEVEN_SUS_FOUR, rootNote: "Ab", baseNote: "Eb"},
+// { name: "Aadd9/B",   notes: ["B1", "C#2", "E2"],    family: SEVEN_SUS_FOUR, rootNote: "A", baseNote: "B"},
+// { name: "Aadd9/C#",  notes: ["C#1", "E1", "B1"],    family: SEVEN_SUS_FOUR, rootNote: "A", baseNote: "C#"},
+// { name: "Aadd9/E",   notes: ["E1", "B1", "C#2"],    family: SEVEN_SUS_FOUR, rootNote: "A", baseNote: "E"},
+// { name: "Bbadd9/C",  notes: ["C1", "D1", "F2"],     family: SEVEN_SUS_FOUR, rootNote: "Bb", baseNote: "C"},
+// { name: "Bbadd9/D",  notes: ["D1", "F1", "C2"],     family: SEVEN_SUS_FOUR, rootNote: "Bb", baseNote: "D"},
+// { name: "Bbadd9/F",  notes: ["F1", "C2", "D2"],     family: SEVEN_SUS_FOUR, rootNote: "Bb", baseNote: "F"},
+// { name: "Badd9/C#",  notes: ["C#1", "D#1", "F#2"],  family: SEVEN_SUS_FOUR, rootNote: "B", baseNote: "C#"},
+// { name: "Badd9/D#",  notes: ["D#1", "F#1", "C#2"],  family: SEVEN_SUS_FOUR, rootNote: "B", baseNote: "D#"},
+// { name: "Badd9/F#",  notes: ["F#1", "C#2", "D#2"],  family: SEVEN_SUS_FOUR, rootNote: "B", baseNote: "F#"},
+
     // 6/9
 
     //--- maj9 ---
