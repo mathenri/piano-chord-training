@@ -16,7 +16,7 @@ class App extends Component {
       selectedKeys: [],
       askedChord: getRandomElement(CHORDS),
       lastChordCorrect: NO_ANSWER,
-      selectedChordFamilies: new Set(CHORD_FAMILIES),
+      selectedChordFamilies: new Set(CHORD_FAMILIES.map(c => c.name)),
       showModal: false
     }
 
@@ -26,6 +26,7 @@ class App extends Component {
     this.handleChordFamilyCheckboxChanged = this.handleChordFamilyCheckboxChanged.bind(this)
     this.closeModal = this.closeModal.bind(this)
     this.openModal = this.openModal.bind(this)
+    this.getChordDisplay = this.getChordDisplay.bind(this)
   }
 
   handleChordFamilyCheckboxChanged(e) {
@@ -51,14 +52,19 @@ class App extends Component {
 
   // fetches a new random chord and presents it to the user
   nextChord() {
-    const chordsSubset = CHORDS.filter(chord => this.state.selectedChordFamilies.has(chord.family))
+    const chordsSubset = CHORDS.filter(chord => this.state.selectedChordFamilies.has(chord.family.name))
     const nextChord = getRandomElement(chordsSubset)
     this.setState({
       askedChord: nextChord,
       lastChordCorrect: NO_ANSWER,
       selectedKeys: []
     })
+  }
 
+  getChordDisplay(chord) {
+    let chordDisplay = chord.rootNote
+    chordDisplay += (chord.family.minor ? "m" : "")
+    return <p id="asked-chord">{chordDisplay}<sup>{chord.family.extension}</sup>{chord.baseNote ? "/"+chord.baseNote : ""}</p>
   }
 
   // toggles if a piano key is selected or not
@@ -94,10 +100,10 @@ class App extends Component {
               {CHORD_FAMILIES.map(chordFamily => (
                 <Form.Check
                   type="switch"
-                  id={chordFamily}
-                  name={chordFamily}
-                  label={chordFamily}
-                  key={chordFamily}
+                  id={chordFamily.name}
+                  name={chordFamily.name}
+                  label={chordFamily.name}
+                  key={chordFamily.name}
                   onChange={this.handleChordFamilyCheckboxChanged}
                   checked={this.state.selectedChordFamilies.has(chordFamily)}
                 />
@@ -110,7 +116,7 @@ class App extends Component {
           </Modal.Footer>
         </Modal>
         
-        <p id="asked-chord">Chord: {this.state.askedChord.name}</p>
+        {this.getChordDisplay(this.state.askedChord)}
 
         <div id="keyboard">
           {KEYS.map(pianoKey => {
