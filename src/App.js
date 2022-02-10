@@ -66,7 +66,11 @@ class App extends Component {
 
   // fetches a new random chord and presents it to the user
   nextChord() {
-    const chordsSubset = CHORDS.filter(chord => this.state.selectedChordFamilies.has(chord.family.name)).filter(chord => this.state.selectedKeys.has(chord.rootNote))
+    const chordsSubset = CHORDS.filter(
+      chord => this.state.selectedChordFamilies.has(chord.family.name)
+    ).filter(
+      chord => this.state.selectedKeys.has(chord.rootNote)
+    )
     const nextChord = getRandomElement(chordsSubset)
     this.setState({
       askedChord: nextChord,
