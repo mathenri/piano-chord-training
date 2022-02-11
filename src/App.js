@@ -7,6 +7,7 @@ import { getRandomElement, removeElement, sortByNoteOrder } from './utils.js'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
 
 
 class App extends Component {
@@ -173,6 +174,18 @@ class App extends Component {
         <div>
           <Button variant="outline-secondary" size="lg" onClick={this.openModal}>Settings</Button>
         </div>
+
+        <Nav className="justify-content-center">
+          <Nav.Item>
+            <Nav.Link>Chord training</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>Stats</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>Settings</Nav.Link>
+          </Nav.Item>
+        </Nav>
       </div>
     );
   }
