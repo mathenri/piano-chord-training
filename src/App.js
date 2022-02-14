@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { withCookies, Cookies } from 'react-cookie';
+import React, { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 import './App.css';
 import { CHORDS, CHORD_FAMILIES } from './chords.js'
 import { PIANO_KEYS } from './pianoKeys.js'
@@ -14,39 +14,43 @@ import Nav from 'react-bootstrap/Nav';
 
 
 function App () {
-
+  const [cookies, setCookie] = useCookies(['settings'])
   const [selectedPianoKeys, setSelectedPianoKeys] = useState([])
-  const [askedChord, setAskedChord] = useState(getRandomElement(CHORDS))
+  const [askedChord, setAskedChord] = useState(CHORDS[0])
   const [lastChordCorrect, setLastChordCorrect] = useState(NO_ANSWER)
-  const [selectedChordFamilies, setSelectedChordFamilies] = useState(new Set(CHORD_FAMILIES.map(c => c.name)))
-  const [selectedKeys, setSelectedKeys] = useState(new Set(KEYS))
+  const [selectedChordFamilies, setSelectedChordFamilies] = useState(new Set(cookies.ChordFamilies || CHORD_FAMILIES.map(c => c.name)))
+  const [selectedKeys, setSelectedKeys] = useState(new Set(cookies.Keys || KEYS))
   const [showModal, setShowModal] = useState(false)
+
+  useEffect(() => nextChord(), [])
 
   function handleChordFamilyCheckboxChanged(e) {
     const chordFamily = e.target.name
-    let selectedChordFamiliesCopy = selectedChordFamilies
+    let selectedChordFamiliesCopy = new Set(selectedChordFamilies)
     if (selectedChordFamiliesCopy.has(chordFamily)) {
       selectedChordFamiliesCopy.delete(chordFamily);
     } else {
       selectedChordFamiliesCopy.add(chordFamily);
     }
+    setCookie('ChordFamilies', Array.from(selectedChordFamiliesCopy), { path: '/' });
     setSelectedChordFamilies(selectedChordFamiliesCopy)
   }
 
   function handleKeyCheckboxChanged(e) {
     const key = e.target.name
-    let selectedKeysCopy = selectedKeys
+    let selectedKeysCopy = new Set(selectedKeys)
     if (selectedKeysCopy.has(key)) {
       selectedKeysCopy.delete(key);
     } else {
       selectedKeysCopy.add(key);
     }
+    setCookie('Keys', Array.from(selectedKeysCopy), { path: '/' });
     setSelectedKeys(selectedKeysCopy)
   }
 
   // validates if the chord entered by the user is correct
   function validateChord() {
-    let selectedPianoKeysCopy = selectedPianoKeys
+    let selectedPianoKeysCopy = [...selectedPianoKeys]
     sortByNoteOrder(selectedPianoKeysCopy, PIANO_KEYS.map(k => k.id))
     const correct = askedChord.notes.join() === selectedPianoKeysCopy.join() ? CORRECT : INCORRECT
     setLastChordCorrect(correct)
@@ -73,7 +77,7 @@ function App () {
 
   // toggles if a piano key is selected or not
   function togglePianoKey(keyId) {
-    let selectedPianoKeysCopy = selectedPianoKeys
+    let selectedPianoKeysCopy = [...selectedPianoKeys]
     if (!selectedPianoKeysCopy.includes(keyId)) {
       selectedPianoKeysCopy.push(keyId)
     } else {
@@ -84,7 +88,7 @@ function App () {
 
   return (
     <div className="App">
-      <Modal show={this.state.showModal} onHide={this.closeModal}>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Settings</Modal.Title>
         </Modal.Header>
@@ -99,8 +103,8 @@ function App () {
                 name={chordFamily.name}
                 label={chordFamily.name}
                 key={chordFamily.name}
-                onChange={this.handleChordFamilyCheckboxChanged}
-                checked={this.state.selectedChordFamilies.has(chordFamily.name)}
+                onChange={handleChordFamilyCheckboxChanged}
+                checked={selectedChordFamilies.has(chordFamily.name)}
               />
             ))}
             <p>Keys</p>
@@ -111,44 +115,44 @@ function App () {
                 name={key}
                 label={key}
                 key={key}
-                onChange={this.handleKeyCheckboxChanged}
-                checked={this.state.selectedKeys.has(key)}
+                onChange={handleKeyCheckboxChanged}
+                checked={selectedKeys.has(key)}
               />
             ))}
           </Form>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={setShowModal(false)} variant="primary">OK</Button>
+          <Button onClick={() => setShowModal(false)} variant="primary">OK</Button>
         </Modal.Footer>
       </Modal>
       
-      {this.getChordDisplay(this.state.askedChord)}
+      {getChordDisplay(askedChord)}
 
       <div id="keyboard">
         {PIANO_KEYS.map(pianoKey => {
           let clazz = pianoKey.class
-          if (this.state.selectedPianoKeys.includes(pianoKey.id)) {
+          if (selectedPianoKeys.includes(pianoKey.id)) {
             clazz += " selected"
           } 
           return <div 
             className={clazz}
             id={pianoKey.id}
             key={pianoKey.id}
-            onClick={() => this.togglePianoKey(pianoKey.id)}
+            onClick={() => togglePianoKey(pianoKey.id)}
           />
         })}
       </div>
       <div id="result-container">
 
-      <p id="answer" className={this.state.lastChordCorrect === NO_ANSWER ? "invisible" : "visible"}>{this.state.lastChordCorrect}</p>
+      <p id="answer" className={lastChordCorrect === NO_ANSWER ? "invisible" : "visible"}>{lastChordCorrect}</p>
       
-      { this.state.lastChordCorrect !== CORRECT && <Button id="validate-button" size="lg" variant="primary" onClick={this.validateChord}>Validate</Button>}
+      { lastChordCorrect !== CORRECT && <Button id="validate-button" size="lg" variant="primary" onClick={validateChord}>Validate</Button>}
 
-      { this.state.lastChordCorrect === CORRECT && <Button variant="primary" size="lg" onClick={this.nextChord}>Next chord!</Button>}
+      { lastChordCorrect === CORRECT && <Button variant="primary" size="lg" onClick={nextChord}>Next chord!</Button>}
       </div>
       <div>
-        <Button variant="outline-secondary" size="lg" onClick={setShowModal(true)}>Settings</Button>
+        <Button variant="outline-secondary" size="lg" onClick={() => setShowModal(true)}>Settings</Button>
       </div>
 
       <Nav className="justify-content-center">
