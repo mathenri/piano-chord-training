@@ -21,6 +21,7 @@ function App () {
   const [selectedChordFamilies, setSelectedChordFamilies] = useState(new Set(cookies.ChordFamilies || CHORD_FAMILIES.map(c => c.name)))
   const [selectedKeys, setSelectedKeys] = useState(new Set(cookies.Keys || KEYS))
   const [showModal, setShowModal] = useState(false)
+  const [answerTimerStart, setAnswerTimerStart] = useState(Date.now())
 
   useEffect(() => nextChord(), [])
 
@@ -52,8 +53,27 @@ function App () {
   function validateChord() {
     let selectedPianoKeysCopy = [...selectedPianoKeys]
     sortByNoteOrder(selectedPianoKeysCopy, PIANO_KEYS.map(k => k.id))
-    const correct = askedChord.notes.join() === selectedPianoKeysCopy.join() ? CORRECT : INCORRECT
-    setLastChordCorrect(correct)
+    const isCorrect = askedChord.notes.join() === selectedPianoKeysCopy.join() ? CORRECT : INCORRECT
+    if (isCorrect === CORRECT) {
+      let chordExtension = askedChord.family.minor ? "m" : ""
+      chordExtension += askedChord.family.extension || ""
+      const answerDuration = Date.now() - answerTimerStart
+      fetch("http://localhost:8080/stats", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          chord_name: askedChord.name,
+          chord_extension: chordExtension,
+          root_note: askedChord.rootNote,
+          created_at: new Date().toISOString(),
+          user: "Mattias",
+          answer_duration_millis: answerDuration
+        })
+      })
+      .then(res => console.log("Delivered stats to backend!"))
+      .catch(err => console.log("Could not deliver stats to backend! Error:", err))
+    }
+    setLastChordCorrect(isCorrect)
   }
 
   // fetches a new random chord and presents it to the user
@@ -67,6 +87,7 @@ function App () {
     setAskedChord(nextChord)
     setLastChordCorrect(NO_ANSWER)
     setSelectedPianoKeys([])
+    setAnswerTimerStart(Date.now())
   }
 
   function getChordDisplay(chord) {
