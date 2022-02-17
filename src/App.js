@@ -58,9 +58,13 @@ function App () {
       let chordExtension = askedChord.family.minor ? "m" : ""
       chordExtension += askedChord.family.extension || ""
       const answerDuration = Date.now() - answerTimerStart
+      console.log(process.env.REACT_APP_BACKEND_URL)
       fetch(process.env.REACT_APP_BACKEND_URL, {
         method: "POST",
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Auth-Token': process.env.REACT_APP_BACKEND_AUTH_TOKEN // Note: this will be visible to browser users
+        },
         body: JSON.stringify({
           chord_name: askedChord.name,
           chord_extension: chordExtension,
