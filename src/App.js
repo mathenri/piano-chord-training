@@ -58,7 +58,7 @@ function App () {
       let chordExtension = askedChord.family.minor ? "m" : ""
       chordExtension += askedChord.family.extension || ""
       const answerDuration = Date.now() - answerTimerStart
-      fetch("http://localhost:8080/stats", {
+      fetch(process.env.REACT_APP_BACKEND_URL, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
