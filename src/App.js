@@ -180,7 +180,6 @@ function App () {
 
       <nav>
         <Link to="/piano-chord-training">Piano</Link> |{" "}
-        <Link to="/settings">Settings</Link> |{" "}
         <Link to="/stats">Stats</Link>
       </nav>
     </div>

@@ -27,7 +27,6 @@ export default function Stats() {
       {stats.map((chord, i) => <p key={i}>{chord.chord_name} - {chord.created_at}</p>)}
       <nav>
         <Link to="/piano-chord-training">Piano</Link> |{" "}
-        <Link to="/settings">Settings</Link> |{" "}
         <Link to="/stats">Stats</Link>
       </nav>
     </main>
