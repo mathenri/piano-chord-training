@@ -24,6 +24,9 @@ export default function Stats() {
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Stats</h2>
+      <h3>Total guesses</h3>
+      <p>{stats.length}</p>
+      <h3>All guesses</h3>
       {stats.map((chord, i) => <p key={i}>{chord.chord_name} - {chord.created_at}</p>)}
       <nav>
         <Link to="/piano-chord-training">Piano</Link> |{" "}
