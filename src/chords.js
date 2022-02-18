@@ -487,10 +487,10 @@ export const CHORDS = [
     //--- dominant 7th ---
 { name: "C7/E",   notes: ["E1", "G1", "A#1"],  family: DOMINANT_SEVENTH, rootNote: C, baseNote: "E"},
 { name: "C7/G",   notes: ["G1", "A#1", "E2"],  family: DOMINANT_SEVENTH, rootNote: C, baseNote: "G"},
-{ name: "C7/Bb",  notes: ["A#1", "E2", "G"],   family: DOMINANT_SEVENTH, rootNote: C, baseNote: "Bb"},
+{ name: "C7/Bb",  notes: ["A#1", "E2", "G2"],  family: DOMINANT_SEVENTH, rootNote: C, baseNote: "Bb"},
 { name: "Db7/F",  notes: ["F1", "G#1", "B1"],  family: DOMINANT_SEVENTH, rootNote: C_SHARP, baseNote: "F"},
-{ name: "Db7/Ab", notes: ["G#1", "B1", "F1"],  family: DOMINANT_SEVENTH, rootNote: C_SHARP, baseNote: "Ab"},
-{ name: "Db7/Cb", notes: ["B1", "F1", "G#1"],  family: DOMINANT_SEVENTH, rootNote: C_SHARP, baseNote: "Cb"},
+{ name: "Db7/Ab", notes: ["G#1", "B1", "F2"],  family: DOMINANT_SEVENTH, rootNote: C_SHARP, baseNote: "Ab"},
+{ name: "Db7/Cb", notes: ["B1", "F2", "G#2"],  family: DOMINANT_SEVENTH, rootNote: C_SHARP, baseNote: "Cb"},
 { name: "D7/F#",  notes: ["F#1", "A1", "C2"],  family: DOMINANT_SEVENTH, rootNote: D, baseNote: "F#"},
 { name: "D7/A",   notes: ["A1", "C2", "F#2"],  family: DOMINANT_SEVENTH, rootNote: D, baseNote: "A"},
 { name: "D7/C",   notes: ["C1", "F#1", "A1"],  family: DOMINANT_SEVENTH, rootNote: D, baseNote: "C"},
