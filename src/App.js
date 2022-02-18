@@ -9,9 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
-
-
-
+import { Link } from "react-router-dom";
 
 function App () {
   const [cookies, setCookie] = useCookies(['settings'])
@@ -180,17 +178,11 @@ function App () {
         <Button variant="outline-secondary" size="lg" onClick={() => setShowModal(true)}>Settings</Button>
       </div>
 
-      <Nav className="justify-content-center">
-        <Nav.Item>
-          <Nav.Link>Chord training</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link>Stats</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link>Settings</Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <nav>
+        <Link to="/piano-chord-training">Piano</Link> |{" "}
+        <Link to="/settings">Settings</Link> |{" "}
+        <Link to="/stats">Stats</Link>
+      </nav>
     </div>
   );
 }
