@@ -22,7 +22,7 @@ export default function Stats() {
   }
 
   return (
-    <main style={{ padding: "1rem 0" }}>
+    <main>
       <h2>Stats</h2>
       <h3>Total guesses</h3>
       <p>{stats.length}</p>
@@ -30,6 +30,7 @@ export default function Stats() {
       {stats.map((chord, i) => <p key={i}>{chord.chord_name} - {chord.created_at}</p>)}
       <nav>
         <Link to="/piano-chord-training">Piano</Link> |{" "}
+        <Link to="/chord-progressions">Chord Progressions</Link> |{" "}
         <Link to="/stats">Stats</Link>
       </nav>
     </main>
