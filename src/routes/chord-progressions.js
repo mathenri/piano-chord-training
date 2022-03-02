@@ -13,9 +13,7 @@ export default function ChrodProgressions() {
 
   function nextChordProgression() {
     setShowAnswer(false)
-    const nextChordProgression = getRandomElement(CHORD_PROGRESSION_FILES)
-    console.log('nextChordProgression', nextChordProgression)
-    setAudioFile(nextChordProgression)
+    setAudioFile(getRandomElement(CHORD_PROGRESSION_FILES))
     if(audioRef.current) {
       audioRef.current.pause()
       audioRef.current.load()

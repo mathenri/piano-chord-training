@@ -8,7 +8,6 @@ import { getRandomElement, removeElement, sortByNoteOrder } from './utils.js'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
 import { Link } from "react-router-dom";
 
 function App () {
@@ -31,7 +30,7 @@ function App () {
     } else {
       selectedChordFamiliesCopy.add(chordFamily);
     }
-    setCookie('ChordFamilies', Array.from(selectedChordFamiliesCopy), { path: '/' });
+    setCookie('ChordFamilies', Array.from(selectedChordFamiliesCopy), { path: '/', expires: new Date( Date.now() + (365*24*60*60*1000) ) });
     setSelectedChordFamilies(selectedChordFamiliesCopy)
   }
 
