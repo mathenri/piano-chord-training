@@ -7,6 +7,7 @@ import { Chart as ChartJS } from 'chart.js/auto'
 export default function Stats() {
   const [countByDay, setCountByDay] = useState([])
   const [countByExtension, setCountByExtension] = useState([])
+  const [durationByExtension, setDurationByExtension] = useState([])
   
   useEffect(() => getStatsFromServer(), [])
 
@@ -36,11 +37,26 @@ export default function Stats() {
       setCountByExtension(data)
     })
     .catch(err => console.log(err))
+
+    // fetch duration_by_extension data
+    fetch(process.env.REACT_APP_BACKEND_URL_STATS + "/duration_by_extension", {
+      method: "GET",
+      headers: {
+        'X-Auth-Token': process.env.REACT_APP_BACKEND_AUTH_TOKEN // Note: this will be visible to browser users
+      }
+    })
+    .then(response => response.json())
+    //.then(data => data.map(d => d.avg_duration / 1000))
+    .then(data => {
+      console.log(data)
+      setDurationByExtension(data)
+    })
+    .catch(err => console.log(err))
   }
 
-  function getChartData(inputData, title, labelFieldName) {
+  function getChartData(inputData, title, labelFieldName, valueFieldName) {
     const labels = inputData.map(d => d[labelFieldName])
-    const data = inputData.map(d => d.count)
+    const data = inputData.map(d => d[valueFieldName])
 
     return {
       labels,
@@ -57,8 +73,9 @@ export default function Stats() {
   return (
     <main>
       <h2>Stats</h2>
-      <Bar data={getChartData(countByDay, "Count by day", "day")} height={400}/>
-      <Bar data={getChartData(countByExtension, "Count by extension", "chord_extension")} height={400}/>
+      <Bar data={getChartData(countByDay, "Count by day", "day", "count")} height={400}/>
+      <Bar data={getChartData(countByExtension, "Count by extension", "chord_extension", "count")} height={400}/>
+      <Bar data={getChartData(durationByExtension, "Duration by extension", "chord_extension", "avg_duration")} height={400}/>
       <nav>
         <Link to="/piano-chord-training">Piano</Link> |{" "}
         <Link to="/chord-progressions">Chord Progressions</Link> |{" "}
