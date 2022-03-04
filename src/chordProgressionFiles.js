@@ -10,6 +10,7 @@ export const CHORD_PROGRESSION_FILES = [
   "C-G-C_2.mp3",
   "C-G-G:B-C.mp3",
   "C-G7-C.mp3",
+  "C:G-G-C.mp3",
   "Cm-C7-Fm-G7-C.mp3",
   "Cm-Fm-Cm-G-C.mp3",
   "Cm-Fm-Cm.mp3",
@@ -17,4 +18,5 @@ export const CHORD_PROGRESSION_FILES = [
   "Cm-Fm-Gm-Cm.mp3",
   "Cm-G7-Cm.mp3",
   "Cm-Gm-Cm.mp3",
+  "Cm:G-G7-Cm.mp3",
 ]
