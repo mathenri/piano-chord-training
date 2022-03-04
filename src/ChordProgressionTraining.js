@@ -16,6 +16,7 @@ export default function ChordProgressionTraining() {
     if(audioRef.current) {
       audioRef.current.pause()
       audioRef.current.load()
+      audioRef.current.play()
     }
   }
   
@@ -26,7 +27,7 @@ export default function ChordProgressionTraining() {
         <source src={process.env.PUBLIC_URL + '/audio/' + audioFile} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <p id="answer" className={showAnswer ? "visible" : "invisible"}>{audioFile}</p>
+      <p id="answer" className={showAnswer ? "visible" : "invisible"}>{audioFile.substring(0, audioFile.lastIndexOf('.')) || audioFile}</p>
       <div>
         { !showAnswer && <Button size="lg" variant="primary" onClick={() => setShowAnswer(true)}>Show answer</Button>}
         { showAnswer && <Button size="lg" variant="primary" onClick={nextChordProgression}>Next Progression</Button>}
