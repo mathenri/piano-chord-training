@@ -4,7 +4,7 @@ import './ChordTraining.css';
 import { CHORDS, CHORD_FAMILIES } from './chords.js'
 import { PIANO_KEYS } from './pianoKeys.js'
 import { NO_ANSWER, CORRECT, INCORRECT, KEYS } from './constants.js'
-import { getRandomElement, removeElement, sortByNoteOrder } from './utils.js'
+import { getRandomElement, removeElement, sortByNoteOrder, rootNoteTranslation } from './utils.js'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -72,7 +72,7 @@ export default function ChordTraining () {
         body: JSON.stringify({
           chord_name: askedChord.name,
           chord_extension: chordExtension,
-          root_note: askedChord.rootNote,
+          root_note: rootNoteTranslation(askedChord.rootNote),
           created_at: new Date().toISOString(),
           user: "Mattias",
           answer_duration_millis: answerDuration
@@ -90,7 +90,7 @@ export default function ChordTraining () {
     const chordsSubset = CHORDS.filter(
       chord => selectedChordFamilies.has(chord.family.name)
     ).filter(
-      chord => selectedKeys.has(chord.rootNote)
+      chord => selectedKeys.has(rootNoteTranslation(chord.rootNote))
     )
     const nextChord = getRandomElement(chordsSubset)
     setAskedChord(nextChord)
@@ -118,7 +118,7 @@ export default function ChordTraining () {
   }
 
   return (
-    <div className="App">
+    <div>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Settings</Modal.Title>

@@ -17,3 +17,28 @@ export function sortByNoteOrder(arr, order) {
       return order.indexOf(a) - order.indexOf(b)
   })
 }
+
+export function rootNoteTranslation(rootNote) {
+  switch(rootNote) {
+    case "B#":
+      return "C"
+    case "C#":
+      return "Db"
+    case "D#":
+      return "Eb"
+    case "Fb":
+      return "E"
+    case "E#":
+      return "F"
+    case "Gb":
+      return "F#"
+    case "G#":
+      return "Ab"
+    case "A#":
+      return "Bb"
+    case "Cb":
+      return "B"
+    default:
+      return rootNote
+  }
+}

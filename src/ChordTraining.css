@@ -13,15 +13,6 @@ $blackKey_Offset: (-($blackKey_Width / 2) - $border_Width);
   --black-key-offset:  calc((-1 * var(--black-key-width)  / 2 ) - var(--border-width));
 }
 
-.App {
-  text-align: center;
-}
-
-body {
-   display: flex;
-   justify-content: center;
-}
-
 .key {
    float: left;
    position: relative;
