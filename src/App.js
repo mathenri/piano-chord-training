@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ChordProgressionTraining from "./ChordProgressionTraining.js"
 import Stats from "./Stats.js"
 import ChordTraining from "./ChordTraining.js"
+import './App.css'
 
 export default function App () {
 
   return (
     <Router>
-      <div>
+      <div id="app">
         <Routes>
           <Route 
             exact path={process.env.REACT_APP_BASE_URL_PATH + "/chord-progression-training"}

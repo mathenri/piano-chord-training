@@ -1,74 +1,18 @@
-/* 
-
-$blackKey_Offset: (-($blackKey_Width / 2) - $border_Width);
-*/
-:root {
-  --white-key-count: 14;
-  --keyboard-width: 95vw;
-  --keyboard-height: calc(var(--keyboard-width) * 0.20);
-  --border-width: calc(var(--keyboard-width) * 0.0015);
-  --white-key-width: calc(var(--keyboard-width) / var(--white-key-count));
-  --black-key-height:  calc(var(--keyboard-height) * 0.6);
-  --black-key-width:  calc(var(--white-key-width) * 0.5);
-  --black-key-offset:  calc((-1 * var(--black-key-width)  / 2 ) - var(--border-width));
-}
-
-.App {
-  text-align: center;
-}
-
 body {
    display: flex;
    justify-content: center;
 }
 
-.key {
-   float: left;
-   position: relative;
+li {
+  display: inline;
+  margin-right: 20px;
 }
 
-.white {
-   height: var(--keyboard-height);
-   width: var(--white-key-width);
-   z-index: 1;
-   border-top: var(--border-width) solid #aaa;
-   border-bottom: var(--border-width) solid #aaa;
-   border-left: var(--border-width) solid #aaa;
-   background-color: #cbcbcb;
+nav {
+  margin: 20px 0;
+  text-align: center;
 }
 
-.black {
-   height: var(--black-key-height);
-   width: var(--black-key-width);
-   z-index: 2;
-   border: var(--border-width) solid #000;
-   background-color: #222;
-}
-
-.selected {
-  background-color: red;
-}
- 
-.a, .b, .d, .e, .g, .black {
-   margin: 0 0 0 var(--black-key-offset);
-}
-
-#keyboard {
-  height: var(--keyboard-height); /* Fix so next div is below is placed below this. Is this the correct way to do it though? */
-}
-
-#keyboard > .note:last-child {
-   border-right: var(--border-width) solid #aaa;
-}
-
-#asked-chord {
-  font-size: 22px;
-}
-
-#result-container {
-  padding: 10px;
-}
-
-.invisible {
-  background-color: white; /* TODO: better solution for this? */
+#app {
+  text-align: center;
 }
