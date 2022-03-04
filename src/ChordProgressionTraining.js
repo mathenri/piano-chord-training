@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
-import './chord-progressions.css';
+import './ChordProgressionTraining.css';
 import { CHORD_PROGRESSION_FILES } from './chordProgressionFiles.js';
-import { getRandomElement } from '../utils.js'
+import { getRandomElement } from './utils.js'
 
-export default function ChrodProgressions() {
+export default function ChordProgressionTraining() {
   const [audioFile, setAudioFile] = useState(getRandomElement(CHORD_PROGRESSION_FILES))
   const [showAnswer, setShowAnswer] = useState(false)
 
@@ -32,11 +31,6 @@ export default function ChrodProgressions() {
         { !showAnswer && <Button size="lg" variant="primary" onClick={() => setShowAnswer(true)}>Show answer</Button>}
         { showAnswer && <Button size="lg" variant="primary" onClick={nextChordProgression}>Next Progression</Button>}
       </div>
-      <nav>
-        <Link to="/piano-chord-training">Piano</Link> |{" "}
-        <Link to="/chord-progressions">Chord Progressions</Link> |{" "}
-        <Link to="/stats">Stats</Link>
-      </nav>
     </main>
   );
 }

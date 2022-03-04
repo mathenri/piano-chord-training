@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {useState,  useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart } from 'react-chartjs-2'
@@ -11,6 +10,7 @@ export default function Stats() {
   
   useEffect(() => getStatsFromServer(), [])
 
+  /* Fetches statistics data from backend server */
   function getStatsFromServer() {
     // fetch count_by_day data
     fetch(process.env.REACT_APP_BACKEND_URL_STATS + "/count_by_day", {
@@ -54,6 +54,7 @@ export default function Stats() {
     .catch(err => console.log(err))
   }
 
+  /* Transform statistics data from server to an chart input data */
   function getChartData(inputData, title, labelFieldName, valueFieldName) {
     const labels = inputData.map(d => d[labelFieldName])
     const data = inputData.map(d => d[valueFieldName])
@@ -76,11 +77,6 @@ export default function Stats() {
       <Bar data={getChartData(countByDay, "Count by day", "day", "count")} height={400}/>
       <Bar data={getChartData(countByExtension, "Count by extension", "chord_extension", "count")} height={400}/>
       <Bar data={getChartData(durationByExtension, "Duration by extension", "chord_extension", "avg_duration")} height={400}/>
-      <nav>
-        <Link to="/piano-chord-training">Piano</Link> |{" "}
-        <Link to="/chord-progressions">Chord Progressions</Link> |{" "}
-        <Link to="/stats">Stats</Link>
-      </nav>
     </main>
   );
 }
