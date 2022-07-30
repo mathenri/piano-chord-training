@@ -532,7 +532,7 @@ export const CHORDS = [
 // { name: "D7#5/Gb",    notes: ["F#1", "A#1", "C2"], family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'D', baseNote: "Gb"},
 // { name: "D7#5/A#",    notes: ["A#1", "C2", "F#2"], family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'D', baseNote: "A#"},
 // { name: "D7#5/C",     notes: ["C1", "F#2", "A#2"], family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'D', baseNote: "C"},
-{ name: "D7#5",     notes: ["C1", "F#2", "A#2"], family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'D'},
+{ name: "D7#5",     notes: ["C1", "F#1", "A#1"], family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'D'},
 // { name: "Eb7#5/G",    notes: ["G1", "B1", "C#2"],  family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'Eb', baseNote: "G"},
 // { name: "Eb7#5/B",    notes: ["B1", "C#2", "G2"],  family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'Eb', baseNote: "B"},
 // { name: "Eb7#5/Db",   notes: ["C#1", "G1", "B1"],  family: DOMINANT_SEVENTH_SHARP_FIVE , rootNote: 'Eb', baseNote: "Db"},
