@@ -180,7 +180,7 @@ export const CHORDS = [
 { name: "Esus4/B",   notes: ["B1", "E2", "A2"],    family: SUS_FOUR, rootNote: 'E', baseNote: "B"},
 { name: "Fsus4",     notes: ["F1", "A#1", "C2"],   family: SUS_FOUR, rootNote: 'F'},
 { name: "Fsus4/Bb",  notes: ["A#1", "C2", "F2"],   family: SUS_FOUR, rootNote: 'F', baseNote: "Bb"},
-{ name: "Fsus4/C",   notes: ["C1", "F2", "A#2"],   family: SUS_FOUR, rootNote: 'F', baseNote: "C"},
+{ name: "Fsus4/C",   notes: ["C1", "F1", "A#1"],   family: SUS_FOUR, rootNote: 'F', baseNote: "C"},
 { name: "F#sus4",    notes: ["F#1", "B1", "C#2"],  family: SUS_FOUR, rootNote: 'F#'},
 { name: "F#sus4/B",  notes: ["B1", "C#2", "F#2"],  family: SUS_FOUR, rootNote: 'F#', baseNote: "B"},
 { name: "F#sus4/C#", notes: ["C#1", "F#2", "B2"],  family: SUS_FOUR, rootNote: 'F#', baseNote: "C#"},
